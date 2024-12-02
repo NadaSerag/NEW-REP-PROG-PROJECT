@@ -1,0 +1,171 @@
+#include "CellPosition.h"
+#include "UI_Info.h"
+
+CellPosition::CellPosition()
+{
+	// (-1) indicating an invalid cell (uninitialized by the user)
+	vCell = -1;
+	hCell = -1;
+}
+
+CellPosition::CellPosition(int v, int h)
+{
+	// (-1) indicating an invalid cell (uninitialized by the user)
+	vCell = -1;
+	hCell = -1;
+
+	SetVCell(v);
+	SetHCell(h);
+}
+
+CellPosition::CellPosition(int cellNum)
+{
+	(*this) = GetCellPositionFromNum(cellNum); // the function call with build a cell position (vCell and hCell)
+	// from the passed (cellNum)
+	// (*this) = ... --> this will copy the returned (vCell and hCell)
+	//                   to the data members (vCell and hCell)
+}
+
+bool CellPosition::SetVCell(int v)
+{
+	///TODO: Implement this function as described in the .h file (don't forget the validation):::done
+	if (v <= 4 && v >= 0) {
+		vCell = v;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool CellPosition::SetHCell(int h)
+{
+	///TODO: Implement this function as described in the .h file (don't forget the validation) ::: done
+	if (h <= 10 && h >= 0)
+	{
+		hCell = h;
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+int CellPosition::VCell() const
+{
+	return vCell;
+}
+
+int CellPosition::HCell() const
+{
+	return hCell;
+}
+
+bool CellPosition::IsValidCell() const
+{
+	///TODO: Implement this function as described in the .h file:::done
+
+	return IsValidHcell(hCell)&&IsValidVcell(vCell);
+}
+
+bool CellPosition::IsValidHcell(int h) const
+{
+	return h <= 10 && h >= 0;
+}
+
+bool CellPosition::IsValidVcell(int v) const
+{
+	return v <= 4 && v >= 0;
+}
+
+int CellPosition::GetCellNum() const
+{
+	return GetCellNumFromPosition(*this); // (*this) is the calling object of GetCellNum
+	// which means the object of the current data members (vCell and hCell)
+}
+
+int CellPosition::GetCellNumFromPosition(const CellPosition& cellPosition)
+{
+	// Note:
+	// this is a static function (do NOT need a calling object so CANNOT use the data members of the calling object, vCell&hCell)
+	// just define an integer that represents cell number and calculate it using the passed cellPosition then return it
+	int cellNUM = 0;
+	int index_h = 0;
+	int index_v = 0;
+
+	///TODO: Implement this function as described in the .h file
+	for (int i = 4; i < 5; i--)
+	{
+		if (cellPosition.VCell() == i)
+		{
+			index_v = i;
+		}
+	}
+	for (int j = 0; j < 11; j++)
+	{
+		if (cellPosition.HCell() == j)
+		{
+			index_h = j;
+		}
+	}
+	cellNUM = 11 * (4 - index_v) + (1 + index_h);
+	return cellNUM;
+}
+
+CellPosition CellPosition::GetCellPositionFromNum(int cellNum)
+{
+	// this is a static function (do NOT need a calling object so CANNOT use the data members of the calling object, vCell&hCell)
+
+	CellPosition position;
+
+	/// TODO: Implement this function as described in the .h file:::done
+	int index_h;
+	int index_v;
+	if ((((11 - 10 * cellNum) % 11) - 1) != 0)
+	{
+		index_h = ((11 - 10 * cellNum) % 11) - 1;
+	}
+	else
+	{
+		index_h = 10;
+	}
+	index_v = 5 - ((cellNum - index_h) % 10);
+	// Note: use the passed cellNum to set the vCell and hCell of the "position" variable declared inside the function
+	//       I mean: position.SetVCell(...) and position.SetHCell(...) then return it
+
+	position.SetHCell(index_h);
+	position.SetVCell(index_v);
+	return position;
+}
+
+void CellPosition::AddCellNum(int addedNum, Direction direction)
+{
+
+	/// TODO: Implement this function as described in the .h file:::done
+	if (direction == UP)
+	{
+		if (0 <= (vCell + addedNum * 11) <= 4) {
+			vCell = vCell + addedNum * 11;
+		}
+	}
+	if (direction == DOWN)
+	{
+		if (0 <= (vCell - addedNum * 11) <= 4) {
+			vCell = vCell - addedNum * 11;
+		}
+	}
+	if (direction == RIGHT)
+	{
+		if (0 <= (hCell + addedNum) <= 10) {
+			hCell = hCell + addedNum;
+		}
+	}
+	if (direction == LEFT)
+	{
+		if (0 <= (hCell - addedNum) <= 10) {
+			hCell = hCell - addedNum;
+		}
+	}
+	// Note: this function updates the data members (vCell and hCell) of the calling object
+
+}
