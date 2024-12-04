@@ -33,9 +33,9 @@ bool CellPosition::SetVCell(int v)
 		vCell = v;
 		return true;
 	}
-	else {
+
 		return false;
-	}
+
 }
 
 bool CellPosition::SetHCell(int h)
@@ -46,9 +46,9 @@ bool CellPosition::SetHCell(int h)
 		hCell = h;
 		return true;
 	}
-	else {
+
 		return false;
-	}
+
 }
 
 int CellPosition::VCell() const
@@ -65,7 +65,7 @@ bool CellPosition::IsValidCell() const
 {
 	///TODO: Implement this function as described in the .h file:::done
 
-	return IsValidHcell(hCell)&&IsValidVcell(vCell);
+	return IsValidHcell(hCell) && IsValidVcell(vCell);
 }
 
 bool CellPosition::IsValidHcell(int h) const
@@ -93,21 +93,13 @@ int CellPosition::GetCellNumFromPosition(const CellPosition& cellPosition)
 	int index_h = 0;
 	int index_v = 0;
 
-	///TODO: Implement this function as described in the .h file
-	for (int i = 4; i < 5; i--)
+	///TODO: Implement this function as described in the .h file 
+	if (cellPosition.IsValidCell())
 	{
-		if (cellPosition.VCell() == i)
-		{
-			index_v = i;
-		}
+		index_v = cellPosition.VCell();
+		index_h = cellPosition.HCell();
 	}
-	for (int j = 0; j < 11; j++)
-	{
-		if (cellPosition.HCell() == j)
-		{
-			index_h = j;
-		}
-	}
+
 	cellNUM = 11 * (4 - index_v) + (1 + index_h);
 	return cellNUM;
 }
