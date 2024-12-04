@@ -242,8 +242,8 @@ void Output::CreateDesignModeToolBar() const
 	// reoder them in UI_Info.h ==> enum DESIGN_MODE_ITEMS
 	// ** MAKE SURE THAT THE IMAGES ARE .JPG FILES **
 	string MenuItemImages[DESIGN_ITM_COUNT];
-	MenuItemImages[ITM_EXIT] = "images\\Menu_Exit.jpg";
-	MenuItemImages[ITM_SWITCH_TO_PLAY_MODE] = "images\\Menu_SwitchToGame.jpg";
+	//MenuItemImages[ITM_EXIT] = "images\\Menu_Exit.jpg";
+	//MenuItemImages[ITM_SWITCH_TO_PLAY_MODE] = "images\\Menu_SwitchToGame.jpg";
 	
 	///TODO: Change the path of the images as needed
 	MenuItemImages[ITM_SET_FLAG_CELL] = "images\\Menu_Dice.jpg";
@@ -254,7 +254,7 @@ void Output::CreateDesignModeToolBar() const
 
 
 	// Draw menu item one image at a time
-	for(int i=0; i < DESIGN_ITM_COUNT; i++)
+	for(int i=0; i < 1; i++)
 		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 
