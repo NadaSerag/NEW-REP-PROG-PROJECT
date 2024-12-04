@@ -136,25 +136,25 @@ void CellPosition::AddCellNum(int addedNum, Direction direction)
 	/// TODO: Implement this function as described in the .h file:::done
 	if (direction == UP)
 	{
-		if (0 <= (vCell + addedNum * 11) <= 4) {
+		if ((vCell + addedNum * 11)>=0 && (vCell + addedNum * 11) <= 4) {
 			vCell = vCell + addedNum * 11;
 		}
 	}
 	if (direction == DOWN)
 	{
-		if (0 <= (vCell - addedNum * 11) <= 4) {
+		if ((vCell - addedNum * 11)>=0 && (vCell - addedNum * 11) <= 4) {
 			vCell = vCell - addedNum * 11;
 		}
 	}
 	if (direction == RIGHT)
 	{
-		if (0 <= (hCell + addedNum) <= 10) {
+		if ((hCell + addedNum)>=0 && (hCell + addedNum) <= 10) {
 			hCell = hCell + addedNum;
 		}
 	}
 	if (direction == LEFT)
 	{
-		if (0 <= (hCell - addedNum) <= 10) {
+		if ((hCell - addedNum)>=0 && (hCell - addedNum) <= 10) {
 			hCell = hCell - addedNum;
 		}
 	}
