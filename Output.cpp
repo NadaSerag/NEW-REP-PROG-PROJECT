@@ -3,6 +3,10 @@
 #include "Input.h"
 
 #include <iostream>
+
+#include <vector>
+
+using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////// 
 
 Output::Output()
@@ -524,26 +528,49 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 		yRight = y + radius;
 		break;
 	}
+	int X[3];
+	int Y[3];
+	for (int i = 0; i < 3; i++) 
+	{
+		switch (i) {
+		case 1:
+			X[i] = xTop;
+			Y[i] = yTop;
+			break;
+		case 2:
+			X[i] = xLeft;
+			Y[i] = yLeft;
+			break;
+		case 3:
+			X[i] = xRight;
+			Y[i] = yRight;
+			break;
+		}
+	}
+
 	// TODO: Draw the player triangle in center(x,y) and filled with the playerColor passed to the function
 	pWind->SetPen(playerColor, 1);
 	pWind->SetBrush(playerColor);
-	pWind->DrawPolygon({ {xTop, yTop} , { xLeft, yLeft }, { xRight, yRight }, 3, FILLED);
+	pWind->DrawPolygon(X, Y, 3, FILLED);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCellPos) const
+
+
+	void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCellPos) const
 {
+		// TODO: Validate the fromCell and toCell (Must be Horizontal or Vertical, and we can't have the first cell as a starting cell for a belt)
 	if (fromCellPos.VCell() != toCellPos.VCell() && fromCellPos.HCell() != toCellPos.HCell())
 	{
 
 		return;
 	}
-	if (//cell=1)
+	if (fromCellPos.GetCellNumFromPosition(fromCellPos)==1)
 		{
 			return;
 		}
-	// TODO: Validate the fromCell and toCell (Must be Horizontal or Vertical, and we can't have the first cell as a starting cell for a belt)
+	
 
 	// Get the start X and Y coordinates of the upper left corner of the fromCell and toCell
 	int fromCellStartX = GetCellStartX(fromCellPos);
@@ -561,7 +588,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 	// TODO: Draw the belt line and the triangle at the center of the line pointing to the direction of the belt
 
 	// TODO: 1. Set pen color and width using the appropriate parameters of UI_Info object (UI)
-	pWind->SetPen(UI.BeltColor, UI.BeltWidth);
+	pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
 	pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
 	//        2. Draw the line of the belt using the appropriate coordinates
 
