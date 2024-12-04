@@ -131,6 +131,7 @@ int main()
 
 	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times
 	///       to draw the following players:
+	pOut->DrawPlayer(player_1, 1, DARKSLATEBLUE, UP);
 	///       playerNum (0) with color (PlayerColors[0] defined in UI object) 
 	///			in cell position (player_1 declared above) pointing to right direction 
 	///       playerNum (1) with color (PlayerColors[1] defined in UI object) 
