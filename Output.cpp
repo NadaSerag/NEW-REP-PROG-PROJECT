@@ -467,8 +467,16 @@ void Output::DrawCell(const CellPosition & cellPos, color cellColor) const
 
 void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playerColor, Direction direction) const
 {
-	// TODO: Validate the cell position and the playerNum, if not valid return
-	
+	// TODO: Validate the cell position and the playerNum, if not valid return::done
+	if (playerNum < 0 || playerNum > 1 || !cellPos.IsValidCell())
+	{
+		return;
+	}
+	if (cellPos.GetCellNum() == 1)
+	{
+		return;
+	}
+
 
 	// Get the X & Y coordinates of the start point of the cell (its upper left corner)
 	int cellStartX = GetCellStartX(cellPos);
@@ -549,9 +557,12 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	}
 
 	// TODO: Draw the player triangle in center(x,y) and filled with the playerColor passed to the function
+	/*pWind->SetPen(playerColor, 1);
+	pWind->SetBrush(playerColor);
+	pWind->DrawPolygon(X, Y, 3, FILLED);*/
 	pWind->SetPen(playerColor, 1);
 	pWind->SetBrush(playerColor);
-	pWind->DrawPolygon(X, Y, 3, FILLED);
+	pWind->DrawTriangle(xTop, xLeft, xRight, yTop, yRight, yLeft);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
