@@ -14,6 +14,7 @@ enum ActionType // The actions supported (add more as needed)
 	ADD_WATERPIT,
 	ADD_DANGERZONE,
 	ADD_WORKSHOP,
+	ADD_ROTATING_GEAR_ANTI,
 	ADD_ROTATING_GEAR,
 	COPY_GAME_OBJECT,
 	CUT_GAME_OBJECT,
