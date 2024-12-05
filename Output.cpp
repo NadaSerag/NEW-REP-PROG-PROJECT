@@ -509,7 +509,7 @@ void Output::DrawCell(const CellPosition & cellPos, color cellColor) const
 void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playerColor, Direction direction) const
 {
 	// TODO: Validate the cell position and the playerNum, if not valid return::done
-	if (playerNum < 0 || playerNum > 1 || !cellPos.IsValidCell())
+	if (playerNum < 0 || playerNum > 1 && !cellPos.IsValidCell())
 	{
 		return;
 	}
@@ -541,37 +541,16 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	// Calculate the X coordinate of the center of the player's triangle (based on playerNum)
 	int x = cellStartX + UI.BeltXOffset + radius + 4; // UI.BeltXOffset is used to draw players' triangles 
 														// AFTER the Belt start vertical line (assuming there is a belt)
-	int wedith = radius * 2;                                                  // for not overlapping with belts
+	int wedith= radius * 2;                                                  // for not overlapping with belts
 	int highet = radius * 2;
-	int xTop, yTop, xLeft, yLeft, xRight, yRight;
 	
-	int X[3];
-	int Y[3];
-	for (int i = 0; i < 3; i++) 
-	{
-		switch (i) {
-		case 1:
-			X[i] = xTop;
-			Y[i] = yTop;
-			break;
-		case 2:
-			X[i] = xLeft;
-			Y[i] = yLeft;
-			break;
-		case 3:
-			X[i] = xRight;
-			Y[i] = yRight;
-			break;
-		}
-	}
-
+	
+	
 	// TODO: Draw the player triangle in center(x,y) and filled with the playerColor passed to the function
-	/*pWind->SetPen(playerColor, 1);
-	pWind->SetBrush(playerColor);
-	pWind->DrawPolygon(X, Y, 3, FILLED);*/
+	/*/*/
 	pWind->SetPen(playerColor, 1);
 	pWind->SetBrush(playerColor);
-	DrawTriangle(xTop, xLeft, xRight, yTop, yRight, yLeft);
+	DrawTriangle(x,y, wedith, highet,direction,playerColor);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -705,7 +684,18 @@ void Output::DrawDangerZone(const CellPosition& cellPos) const
 void Output::DrawWaterPit(const CellPosition& cellPos) const
 {
 	///TODO: Complete the implementation of the following function
-
+	
+		CellPosition cellposi = cellPos;
+		int x1 = GetCellStartX(cellPos);//uper left x
+		int y1 = GetCellStartY(cellPos);//uper left y
+		cellposi.AddCellNum(1, RIGHT);
+		cellposi.AddCellNum(1, DOWN);
+		int x2 = GetCellStartX(cellposi);//lower right x
+		int y2 = GetCellStartY(cellposi);//lower right y
+		pWind->SetBrush(DARKSLATEBLUE);
+		pWind->DrawRectangle(x1,y1,x2,y2,FILLED,0,0);
+		
+	
 
 }
 
