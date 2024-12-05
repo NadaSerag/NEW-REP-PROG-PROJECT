@@ -47,23 +47,8 @@ int Input::GetInteger(Output *pO) const
 
 	///TODO: implement the GetInteger function as described in Input.h file 
 	//       using function GetString() defined above and function stoi()
-
-	string Label;
-	char Key;
-	while (1)
-	{
-		pWind->WaitKeyPress(Key);
-		if (Key == 27)	// ESCAPE key is pressed
-			return 0;	// returns nothing as user has cancelled label
-		if (Key == 13)	// ENTER key is pressed
-			return stoi(Label);
-		if ((Key == 8) && (Label.size() >= 1))	// BackSpace is pressed
-			Label.resize(Label.size() - 1);
-		else
-			Label += Key;
-		if (pO)
-			pO->PrintMessage(Label);
-	}
+	string l = GetSrting(pO);
+	return stoi(l);
 
 
 
