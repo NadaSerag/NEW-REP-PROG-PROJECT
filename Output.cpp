@@ -172,6 +172,34 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 		y3 = triangleCenterY - triangleHeight / 2;
 	}
 	///TODO: Continue the implementation
+	if (direction == DOWN)
+	{
+		x1 = triangleCenterX - triangleWidth / 2;
+		y1 = triangleCenterY - triangleHeight / 2;
+		x2 = triangleCenterX + triangleWidth / 2;
+		y2 = triangleCenterY - triangleHeight / 2;
+		x3 = triangleCenterX;
+	    y3 = triangleCenterY + triangleHeight / 2;
+	}
+	if (direction == LEFT)
+	{
+		x1 = triangleCenterX + triangleWidth / 2;
+		y1 = triangleCenterY + triangleHeight / 2;
+		x2 = triangleCenterX + triangleWidth / 2;
+		y2 = triangleCenterY - triangleHeight / 2;
+		x3 = triangleCenterX- triangleWidth/2;
+		y3 = triangleCenterY;
+	}
+	if (direction == RIGHT)
+	{
+		x1 = triangleCenterX - triangleWidth / 2;
+		y1 = triangleCenterY - triangleHeight / 2;
+		x2 = triangleCenterX - triangleWidth / 2;
+		y2 = triangleCenterY +	 triangleHeight / 2;
+		x3 = triangleCenterX + triangleWidth / 2;
+		y3 = triangleCenterY;
+	}
+
 	
 }
 
@@ -501,42 +529,10 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	// Calculate the X coordinate of the center of the player's triangle (based on playerNum)
 	int x = cellStartX + UI.BeltXOffset + radius + 4; // UI.BeltXOffset is used to draw players' triangles 
 														// AFTER the Belt start vertical line (assuming there is a belt)
-														// for not overlapping with belts
+	int wedith = radius * 2;                                                  // for not overlapping with belts
+	int highet =raduis*2
 	int xTop, yTop, xLeft, yLeft, xRight, yRight;
-	switch (direction) {
-	case UP:
-		xTop = x;
-		yTop = y - radius;
-		xLeft = x - radius;
-		yLeft = y + radius;
-		xRight = x + radius;
-		yRight = y + radius;
-		break;
-	case DOWN:
-		xTop = x;
-		yTop = y + radius;
-		xLeft = x - radius;
-		yLeft = y - radius;
-		xRight = x + radius;
-		yRight = y - radius;
-		break;
-	case LEFT:
-		xTop = x - radius;
-		yTop = y;
-		xLeft = x + radius;
-		yLeft = y - radius;
-		xRight = x + radius;
-		yRight = y + radius;
-		break;
-	case RIGHT:
-		xTop = x + radius;
-		yTop = y;
-		xLeft = x - radius;
-		yLeft = y - radius;
-		xRight = x - radius;
-		yRight = y + radius;
-		break;
-	}
+	
 	int X[3];
 	int Y[3];
 	for (int i = 0; i < 3; i++) 
@@ -563,7 +559,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	pWind->DrawPolygon(X, Y, 3, FILLED);*/
 	pWind->SetPen(playerColor, 1);
 	pWind->SetBrush(playerColor);
-	pWind->DrawTriangle(xTop, xLeft, xRight, yTop, yRight, yLeft);
+	DrawTriangle(xTop, xLeft, xRight, yTop, yRight, yLeft);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -632,16 +628,29 @@ void Output::DrawFlag(const CellPosition& cellPos) const
 	int cellStartX = GetCellStartX(cellPos);
 	int cellStartY = GetCellStartY(cellPos);
 
+		//endx=endx
+	//endyy+hight
+
 	// TODO: Draw the flag as a line with a triangle connected to it directed to right
 
 	// TODO: 1. Draw the flag pole (the line)
 	int flagPoleStartX = cellStartX + UI.CellWidth / 2;
 	int flagPoleStartY = cellStartY + UI.CellHeight / 4;
-
+	int CellEndx = CellEndx;
+	int;
+	//wedith rb3
+	// hught rob3
+	//centerx 5/8
+	//centrty 3/8 hight
 	
 
 	// 		 2. Draw the flag (the triangle)
-	
+	pWind->SetPen();
+	//setpenclor w wedith
+	pWind->DrawLine();
+	//line
+	pWind->DrawTriangle()
+	//triangle
 	
 }
 
