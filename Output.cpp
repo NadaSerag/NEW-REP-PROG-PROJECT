@@ -280,7 +280,8 @@ void Output::CreateDesignModeToolBar() const
 	MenuItemImages[ITM_ADD_WATERPIT] = "images\\water pit.jpg";
 	MenuItemImages[ITM_ADD_DANGERZONE] = "images\\danger zone.jpg";
 	MenuItemImages[ITM_ADD_WORKSHOP] = "images\\Workshop.jpg";
-	MenuItemImages[ITM_ADD_ROTATING_GEAR] = "images\\rotating gear.jpg";
+	MenuItemImages[ITM_ADD_ROTATING_GEAR_ANTI] = "images\\rotating gear.jpg";
+	MenuItemImages[ITM_ADD_ROTATING_GEAR] = "images\\rotating gear2.jpg";
 	MenuItemImages[ITM_COPY_GAME_OBJECT] = "images\\copy game object.jpg";
 	MenuItemImages[ITM_CUT_GAME_OBJECT] = "images\\cut game object.jpg";
 	MenuItemImages[ITM_PASTE_GAME_OBJECT] = "images\\paste game object.jpg";
@@ -550,7 +551,8 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	/*/*/
 	pWind->SetPen(playerColor, 1);
 	pWind->SetBrush(playerColor);
-	DrawTriangle(x,y, wedith, highet,direction,playerColor);
+
+	//DrawTriangle(xTop, xLeft, xRight, yTop, yRight, yLeft);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

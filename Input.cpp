@@ -47,23 +47,8 @@ int Input::GetInteger(Output *pO) const
 
 	///TODO: implement the GetInteger function as described in Input.h file 
 	//       using function GetString() defined above and function stoi()
-
-	string Label;
-	char Key;
-	while (1)
-	{
-		pWind->WaitKeyPress(Key);
-		if (Key == 27)	// ESCAPE key is pressed
-			return 0;	// returns nothing as user has cancelled label
-		if (Key == 13)	// ENTER key is pressed
-			return stoi(Label);
-		if ((Key == 8) && (Label.size() >= 1))	// BackSpace is pressed
-			Label.resize(Label.size() - 1);
-		else
-			Label += Key;
-		if (pO)
-			pO->PrintMessage(Label);
-	}
+	string l = GetSrting(pO);
+	return stoi(l);
 
 
 
@@ -105,6 +90,7 @@ ActionType Input::GetUserAction() const
 			case ITM_ADD_WATERPIT: return ADD_WATERPIT;
 			case ITM_ADD_DANGERZONE: return ADD_DANGERZONE;
 			case ITM_ADD_WORKSHOP: return ADD_WORKSHOP;
+			case ITM_ADD_ROTATING_GEAR_ANTI: return ADD_ROTATING_GEAR_ANTI;
 			case ITM_ADD_ROTATING_GEAR: return ADD_ROTATING_GEAR;
 			case ITM_COPY_GAME_OBJECT: return COPY_GAME_OBJECT;
 			case ITM_CUT_GAME_OBJECT: return CUT_GAME_OBJECT;
