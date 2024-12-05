@@ -272,18 +272,30 @@ void Output::CreateDesignModeToolBar() const
 	string MenuItemImages[DESIGN_ITM_COUNT];
 	MenuItemImages[ITM_EXIT] = "images\\Menu_Exit.jpg";
 	MenuItemImages[ITM_SWITCH_TO_PLAY_MODE] = "images\\Menu_SwitchToGame.jpg";
-	MenuItemImages[ITM_ADD_ANTENNA] = 
+	MenuItemImages[ITM_ADD_ANTENNA] = "images\\antenna.jpg";
 	
-	///TODO: Change the path of the images as needed
-	MenuItemImages[ITM_SET_FLAG_CELL] = "images\\Menu_Dice.jpg";
+	///TODO: Change the path of the images as needed :: Donee
+	MenuItemImages[ITM_SET_FLAG_CELL] = "images\\flag.jpg";
+	MenuItemImages[ITM_ADD_BELT] = "images\\belt.jpg";
+	MenuItemImages[ITM_ADD_WATERPIT] = "images\\water pit.jpg";
+	MenuItemImages[ITM_ADD_DANGERZONE] = "images\\danger zone.jpg";
+	MenuItemImages[ITM_ADD_WORKSHOP] = "images\\Workshop.jpg";
+	MenuItemImages[ITM_ADD_ROTATING_GEAR] = "images\\rotating gear.jpg";
+	MenuItemImages[ITM_COPY_GAME_OBJECT] = "images\\copy game object.jpg";
+	MenuItemImages[ITM_CUT_GAME_OBJECT] = "images\\cut game object.jpg";
+	MenuItemImages[ITM_PASTE_GAME_OBJECT] = "images\\paste game object.jpg";
+	MenuItemImages[ITM_DELETE_GAME_OBJECT] = "images\\delete.jpg";
+	MenuItemImages[ITM_SAVE_GRID] = "images\\save grid.jpg";
+	MenuItemImages[ITM_LOAD_GRID] = "images\\Menu_SwitchToGrid.jpg";
+
 	
 	
-	///TODO: Prepare images for each menu item and add it to the list
+	///TODO: Prepare images for each menu item and add it to the list :: Donee
 
 
 
 	// Draw menu item one image at a time
-	for(int i=0; i < 3; i++)
+	for(int i=0; i < DESIGN_ITM_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 
