@@ -663,10 +663,22 @@ void Output::DrawFlag(const CellPosition& cellPos) const
 void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 {
 	// TODO: Validate the cell position
+	if (!cellPos.IsValidCell())
+	{
+		return;
+	}
+	int Highet = UI.CellHeight / 2;
+	int Wedith = UI.CellWidth / 2;
 
 	// TODO: Draw the rotating gear image in the cell based on the passed direction (clockwise or counter clockwise)
-
-
+	if (clockwise)
+	{
+		DrawImageInCell(cellPos, "images\\rotating gear2.jpg", Wedith, Highet);
+	}
+	else
+	{
+		DrawImageInCell(cellPos, " images\\rotating gear.jpg", Wedith, Highet);
+	}
 }
 
 void Output::DrawAntenna(const CellPosition& cellPos) const
