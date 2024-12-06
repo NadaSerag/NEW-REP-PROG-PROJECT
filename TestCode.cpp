@@ -450,7 +450,7 @@ int main()
 				pOut->PrintMessage("Action: TO_PLAY_MODE , Click anywhere");
 				pOut->CreatePlayModeToolBar();
 
-				///TODO:  Call Function (PrintPlayersInfo) of Class Output with a string similar to 
+				///TODO:  Call Function (PrintPlayersInfo) of Class Output with a string similar to :: DONE
 				//        the one given in the screenshot of project document 
 				pOut->PrintPlayersInfo("P1(2, Right, 10), P2(2, Up, 10) | Curr = P1");
 
