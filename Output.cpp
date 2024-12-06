@@ -617,18 +617,34 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 		}
 		else if (fromCellPos.HCell() == toCellPos.HCell())
 		{
-		
-			int beltFromCellX = fromCellStartX  + UI.BeltXOffset;
-			int beltToCellX = toCellStartX + UI.BeltXOffset;
-			int beltFromCellY = fromCellStartY + UI.BeltYOffset;
-			int beltToCellY = toCellStartY +(UI.CellHeight)- UI.BeltYOffset;
-			pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
-			pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
-			int x = beltFromCellX;
-			int y = (beltFromCellY + beltToCellY) / 2;
-			int triangleWidth = UI.CellWidth / 4;
-			int triangleHeight = UI.CellHeight / 4;
-			DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
+			if (fromCellPos.GetCellNum() < toCellPos.GetCellNum())
+			{
+				int beltFromCellX = fromCellStartX + UI.BeltXOffset;
+				int beltToCellX = toCellStartX + UI.BeltXOffset;
+				int beltFromCellY = fromCellStartY + UI.BeltYOffset;
+				int beltToCellY = toCellStartY + (UI.CellHeight) - UI.BeltYOffset;
+				int x = beltFromCellX;
+				int y = (beltFromCellY + beltToCellY) / 2;
+				int triangleWidth = UI.CellWidth / 4;
+				int triangleHeight = UI.CellHeight / 4;
+				pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
+				pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
+				DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
+			}
+			else {
+				int beltFromCellX = fromCellStartX + UI.BeltXOffset;
+				int beltToCellX = toCellStartX + UI.BeltXOffset;
+				int beltFromCellY = toCellStartY + (UI.CellHeight) - UI.BeltYOffset;
+				int beltToCellY =  fromCellStartY + UI.BeltYOffset;
+				int x = beltFromCellX;
+				int y = (beltFromCellY + beltToCellY) / 2;
+				int triangleWidth = UI.CellWidth / 4;
+				int triangleHeight = UI.CellHeight / 4;
+				pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
+				pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
+				DrawTriangle(x, y, triangleHeight, triangleWidth,DOWN, UI.BeltColor);
+
+			}
 		}
 		
 	}
