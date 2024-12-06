@@ -178,13 +178,13 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition flag_1(4,8);
-	/*CellPosition flag_60(60);
+	/*CellPosition flag_60(-1,4);
 	CellPosition flag_99(99);*/
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
 	pOut->DrawFlag(flag_1);
-	/*pOut->DrawFlag(flag_60);
-	pOut->DrawFlag(flag_99);*/
+	//pOut->DrawFlag(flag_60);
+	////pOut->DrawFlag(flag_99);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
@@ -450,7 +450,7 @@ int main()
 				pOut->PrintMessage("Action: TO_PLAY_MODE , Click anywhere");
 				pOut->CreatePlayModeToolBar();
 
-				///TODO:  Call Function (PrintPlayersInfo) of Class Output with a string similar to 
+				///TODO:  Call Function (PrintPlayersInfo) of Class Output with a string similar to :: DONE
 				//        the one given in the screenshot of project document 
 				pOut->PrintPlayersInfo("P1(2, Right, 10), P2(2, Up, 10) | Curr = P1");
 
