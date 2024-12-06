@@ -56,10 +56,10 @@ int main()
 
 	///TODO: Draw the command bar with only 4 available commands and 4 empty slots for saved commands
 	// done for now ~s
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 4; i++)
 		savedCommands[i] = NO_COMMAND;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 4; i++)
 		availableCommands[i] = MOVE_BACKWARD_ONE_STEP;
 	pOut->CreateCommandsBar(savedCommands, 4, availableCommands, 4);
 
@@ -74,11 +74,15 @@ int main()
 	///		and the first available command will be NO_COMMAND
 	// done for now ~s
 	
-	for (int i = 0; i < 5; i++)
-		savedCommands[i] = MOVE_FORWARD_ONE_STEP;
+	for (int i = 1; i < 5; i++) {
+		savedCommands[0] = MOVE_FORWARD_ONE_STEP;
+		savedCommands[i] = NO_COMMAND;
+	}
 
-	for (int i = 0; i < 10; i++)
-		availableCommands[i] = NO_COMMAND;
+
+	for (int i = 0; i < 7; i++) {
+		availableCommands[i] = Command(i);
+	}
 	pOut->CreateCommandsBar(savedCommands, 5, availableCommands, 7);
 
 
@@ -91,12 +95,16 @@ int main()
 	///TODO: Draw the command bar with 5 saved commands and 6 available commands,
 	/// 	but the first saved command will be MOVE_FORWARD_TWO_STEPS
 	///		and the first available command will be NO_COMMAND as previous test
+	// done for now ~s
 	
-	for (int i = 0; i < 5; i++)
-		savedCommands[i] = MOVE_FORWARD_TWO_STEPS;
+	for (int i = 1; i < 5; i++){
+		savedCommands[0] = MOVE_FORWARD_TWO_STEPS;
+		savedCommands[i] = NO_COMMAND;
+	}
 
-	for (int i = 0; i < 10; i++)
-		availableCommands[i] = NO_COMMAND;
+	for (int i = 0; i < 6; i++)
+		availableCommands[i] = Command(i);
+
 	pOut->CreateCommandsBar(savedCommands, 5, availableCommands, 6);
 	
 
