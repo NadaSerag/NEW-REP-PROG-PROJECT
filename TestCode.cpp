@@ -177,7 +177,7 @@ int main()
 	pOut->PrintMessage("2.4- Drawing (Flags) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition flag_1(1);
+	CellPosition flag_1(9);
 	/*CellPosition flag_60(-1,4);
 	CellPosition flag_99(99);*/
 
