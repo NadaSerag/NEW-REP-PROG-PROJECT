@@ -697,7 +697,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 	// TODO: Validate the cell position ::  done
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos,"Workshop", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos,"images\\Workshop .jpg", UI.CellWidth, UI.CellHeight);
 	}
 
 	// TODO: Draw the workshop image in the cell
@@ -726,7 +726,7 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 	///TODO: Complete the implementation of the following function
 	
 	if (cellPos.GetCellNum() != 1) {
-		int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
+		//int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
 		
 		 DrawCell(cellPos , DARKSLATEBLUE);
 	}
