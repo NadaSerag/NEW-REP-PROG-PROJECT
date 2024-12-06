@@ -434,7 +434,9 @@ int main()
 	int hcellin;
 	int numprint;
 	for (int i = 0; i < 5; i++) {
+		pOut->PrintMessage("Enter the vCell: ");
 		 vcellin = pIn->GetInteger(pOut);
+		 pOut->PrintMessage("Enter the hCell: ");
 		 hcellin = pIn->GetInteger(pOut);
 		CellPosition cellposition(hcellin, vcellin);
 		 numprint = cellposition.GetCellNum();
@@ -460,6 +462,7 @@ int main()
 	int v;
 	int h;
 	for (int i = 0; i < 5; i++) {
+		pOut->PrintMessage("Enter the CellNum: ");
 		 cellNum = pIn->GetInteger(pOut);
 		CellPosition cellin(cellNum);
 		 h = cellin.HCell();
@@ -481,7 +484,9 @@ int main()
 	// 3- Use the function AddCellNum() to add the addedNum to the cellNum:::done
 	// 4- Print the vCell and hCell of the new Cell Position on the status bar:::done
 	// 5- Repeat the above steps Four TIMES with each time a different direction:::done
+	pOut->PrintMessage("Enter the cellNum: ");
 	int cellnum = pIn->GetInteger(pOut);
+	pOut->PrintMessage("Enter the addedNum: ");
 	int addednum = pIn->GetInteger(pOut);
 	CellPosition cellposofup(cellnum);
 	cellposofup.AddCellNum(addednum, UP);
