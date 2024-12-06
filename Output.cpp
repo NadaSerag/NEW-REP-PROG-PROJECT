@@ -614,7 +614,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	else
 	{
 		int x = beltFromCellX;
-		int y
+		int y;
 	}
 
 }
