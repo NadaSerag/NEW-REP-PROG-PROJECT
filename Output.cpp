@@ -160,7 +160,7 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 {
 	int x1, y1, x2, y2, x3, y3;
 
-	///TODO: Calculate the coordiantes of the 3 vertices of the triangle based on the passed parameters
+	///TODO: Calculate the coordiantes of the 3 vertices of the triangle based on the passed parameters // done 
 
 	if (direction == UP)
 	{
@@ -171,7 +171,7 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 		x3 = triangleCenterX;
 		y3 = triangleCenterY - triangleHeight / 2;
 	}
-	///TODO: Continue the implementation
+	///TODO: Continue the implementation // done
 	if (direction == DOWN)
 	{
 		x1 = triangleCenterX - triangleWidth / 2;
@@ -208,7 +208,7 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 
 void Output::DrawImageInCell(const CellPosition& cellPos, string image, int width, int height) const
 {
-	// TODO: Validate the cell position
+	// TODO: Validate the cell position 
 	if (!cellPos.IsValidCell())
 		return;
 
@@ -331,7 +331,7 @@ void Output::CreatePlayModeToolBar() const
 	MenuItemImages[ITM_NEW_GAME] = "images\\new game.jpg";
 	
 
-	///TODO: Prepare images for each menu item and add it to the list // done (didn't change order)
+	///TODO: Prepare images for each menu item and add it to the list // done (didn't change order) ~s
 
 
 
@@ -360,7 +360,7 @@ void Output::CreateCommandsBar(Command savedCommands[], int savedCommandsCount, 
 	CommandItemImages[ROTATE_COUNTERCLOCKWISE] = "images\\rotate anticlockwise.jpg";
 	
 
-	// TODO: Prepare images for more items with .jpg extensions and add them to the list // done
+	// TODO: Prepare images for more items with .jpg extensions and add them to the list // done ~s
 
 	DrawSavedCommands(savedCommands, savedCommandsCount, CommandItemImages);
 	DrawAvailableCommands(availableCommands, availableCommandsCount, CommandItemImages);
