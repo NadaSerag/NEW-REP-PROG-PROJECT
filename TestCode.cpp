@@ -213,6 +213,11 @@ int main()
 	//		5- from belt_end_1 to belt_end_2 --> Invalid
 	// 		6- from belt_end_3 to belt_end_4 --> Invalid
 	pOut->DrawBelt(belt_start_1, belt_end_1);
+	pOut->DrawBelt(belt_start_2, belt_end_2);
+	pOut->DrawBelt(belt_start_3, belt_end_3);
+	pOut->DrawBelt(belt_start_3 ,belt_end_4);
+	pOut->DrawBelt(belt_start_1, belt_end_2);
+	pOut->DrawBelt(belt_start_3, belt_end_4);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Belts) Test,  Click to continue");
@@ -233,6 +238,8 @@ int main()
 	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19)
 	//        1. At cell_13 with rotation left (anticlockwise)
 	//        2. At cell_19 with rotation right (clockwise)
+	pOut->DrawRotatingGear(cell_13, false);
+	pOut->DrawRotatingGear(cell_19, true);
 
 	pOut->PrintMessage("FINISHED - Drawing (Rotating Gears) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
