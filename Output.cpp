@@ -626,7 +626,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 	void Output::DrawFlag(const CellPosition & cellPos) const
 	{
 		// TODO: Validate the cell position
-		if (cellPos.GetCellNum() >= 1 || cellPos.GetCellNum() <= 55)
+		if (cellPos.IsValidCell())
 		{
 			// Get the X and Y coordinates of the start point of the cell (its upper left corner)
 			int cellStartX = GetCellStartX(cellPos);
