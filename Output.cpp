@@ -711,7 +711,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 void Output::DrawDangerZone(const CellPosition& cellPos) const
 {
     ///TODO: Complete the implementation of the following function :: donee
-	 if(cellPos.IsValidCell()) {
+	 if(cellPos.IsValidCell()&& cellPos.GetCellNum()!=1) {
 		
 		DrawCell(cellPos , RED);
 	}
