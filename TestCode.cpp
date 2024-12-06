@@ -178,7 +178,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition flag_1(4,8);
-	/*CellPosition flag_60(-1,4);
+	/*CellPosition flag_60(60);
 	CellPosition flag_99(99);*/
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
