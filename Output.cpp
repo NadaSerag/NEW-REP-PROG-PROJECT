@@ -626,40 +626,44 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-void Output::DrawFlag(const CellPosition& cellPos) const
-{
-	// TODO: Validate the cell position
+	void Output::DrawFlag(const CellPosition& cellPos) const
+	{
+		// TODO: Validate the cell position
+		if (cellPos.GetCellNum() >= 1 || cellPos.GetCellNum() <= 55)
+		{
 
-	// Get the X and Y coordinates of the start point of the cell (its upper left corner)
-	int cellStartX = GetCellStartX(cellPos);
-	int cellStartY = GetCellStartY(cellPos);
+			// Get the X and Y coordinates of the start point of the cell (its upper left corner)
+			int cellStartX = GetCellStartX(cellPos);
+			int cellStartY = GetCellStartY(cellPos);
 
-		//endx=endx
-	//endyy+hight
+			// TODO: Draw the flag as a line with a triangle connected to it directed to right
 
-	// TODO: Draw the flag as a line with a triangle connected to it directed to right
+			// TODO: 1. Draw the flag pole (the line)
+			int flagPoleStartX = cellStartX + UI.CellWidth / 2;
+			int flagPoleStartY = cellStartY + UI.CellHeight / 4;
+			int FlagPoleCellEndX = cellStartX + UI.CellWidth / 2;;
+			int FlagPoleCellEndY = cellStartY + 3 * UI.CellHeight / 4;
+			pWind->DrawLine(flagPoleStartX, flagPoleStartY, FlagPoleCellEndX, FlagPoleCellEndY);
+			//wedith rb3
+			// hught rob3
+			//centerx 5/8
+			//centrty 3/8 hight
 
-	// TODO: 1. Draw the flag pole (the line)
-	int flagPoleStartX = cellStartX + UI.CellWidth / 2;
-	int flagPoleStartY = cellStartY + UI.CellHeight / 4;
-	//int CellEndx = CellEndx;
-	int;
-	//wedith rb3
-	// hught rob3
-	//centerx 5/8
-	//centrty 3/8 hight
-	
 
-	// 		 2. Draw the flag (the triangle)
-	//pWind->SetPen();
-	//setpenclor w wedith
-	//pWind->DrawLine();
-	//line
-	//pWind->DrawTriangle()
-	//triangle
-	
-}
+			// 		 2. Draw the flag (the triangle)
+			int CenterX = cellStartX + (5 * (UI.CellWidth) / 8);
+			int CenterY = cellStartY + (3 * (UI.CellHeight) / 8);
+			int W = UI.CellHeight / 4;
+			int H = UI.CellWidth / 4;
+			DrawTriangle(CenterX, CenterY, H, W, RIGHT, UI.FlagColor);
 
+			//setpenclor w wedith
+
+			//line
+
+		//triangle
+		}
+	}
 void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 {
 	// TODO: Validate the cell position
