@@ -323,13 +323,13 @@ int main()
 
 
 	///TODO: Add code here to 
-	// 1- Read a string from the user on the status bar :: does reading mean only calling?
+	// 1- Read a string from the user on the status bar :: done
 	// 2- After reading the string clear the status bar :: done
 	// 3- print on the status bar "You Entered" then print the string :: done
 	// NOTE: GetString() is already implemented. It is just required from you to call it
 	pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
-	pOut->PrintMessage("You Entered (GetString)");
+	pOut->PrintMessage("You Entered " + pIn->GetSrting(pOut) );
 
 	pOut->PrintMessage("FINISHED - (GetSrting) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
