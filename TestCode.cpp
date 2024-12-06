@@ -234,8 +234,8 @@ int main()
 	CellPosition cell_13(3,1);
 	CellPosition cell_19(3,7);
 
-	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19)
-	//        1. At cell_13 with rotation left (anticlockwise)
+	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19) :: done
+	//        1. At cell_13 with rotation left (anticlockwise) 
 	//        2. At cell_19 with rotation right (clockwise)
 	pOut->DrawRotatingGear(cell_13, false);
 	pOut->DrawRotatingGear(cell_19, true);
@@ -250,7 +250,7 @@ int main()
 
 	CellPosition cell_25(2,2);
 	
-	// TODO: Draw Antenna in cell position (cell_25)
+	// TODO: Draw Antenna in cell position (cell_25)::donee
 	pOut->DrawAntenna(cell_25);
 	pOut->PrintMessage("FINISHED - Drawing (Antenna) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
