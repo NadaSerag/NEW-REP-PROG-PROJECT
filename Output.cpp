@@ -453,7 +453,7 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 void Output::PrintPlayersInfo(string info)
 {
 	///TODO: Clear what was written on the toolbar
-	ClearToolBar();
+	CreatePlayModeToolBar();
 	// One of the correct ways to implement the above TODO is to call CreatePlayModeToolBar(); 
 	// to clear what was written in the player info (there are other ways too � You are free to use any)
 
@@ -677,7 +677,7 @@ void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 	}
 	else
 	{
-		DrawImageInCell(cellPos, " images\\rotating gear.jpg", Wedith, Highet);
+		DrawImageInCell(cellPos, "images\\rotating gear.jpg", Wedith, Highet);
 	}
 }
 
@@ -700,7 +700,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 	// TODO: Validate the cell position ::  done
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos,"images\\Workshop .jpg", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos,"images\\Workshop.jpg", UI.CellWidth, UI.CellHeight);
 	}
 
 	// TODO: Draw the workshop image in the cell :: done
