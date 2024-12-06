@@ -723,8 +723,9 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 	///TODO: Complete the implementation of the following function
 	
 	if (cellPos.GetCellNum() != 1) {
+		int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
 		
-		DrawCell(cellPos, DARKSLATEBLUE);
+		 DrawCell(cellPos , DARKSLATEBLUE);
 	}
 
 }
