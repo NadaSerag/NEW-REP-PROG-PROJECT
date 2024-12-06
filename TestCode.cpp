@@ -131,10 +131,10 @@ int main()
 	CellPosition player_1(4,0);
 	CellPosition player_2(4,1);
 	CellPosition player_15(2, 18);
-	CellPosition player_99(2, 5);
+	CellPosition player_99(2, 5); //cell 28
 
 
-	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times
+	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times :: DONE:WORKS (players drawn in the right cells)
 	///       to draw the following players:
 	///       playerNum (0) with color (PlayerColors[0] defined in UI object) 
 	///			in cell position (player_1 declared above) pointing to right direction 
