@@ -375,6 +375,9 @@ int main()
 	cin >> cellnumm;
 	CellPosition(cellnumm);*/
 
+	CellPosition(cellnumm);
+
+
 	pOut->PrintMessage("FINISHED - (GetCellPositionFromNum) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
