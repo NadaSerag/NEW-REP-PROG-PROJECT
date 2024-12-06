@@ -208,14 +208,15 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 
 void Output::DrawImageInCell(const CellPosition& cellPos, string image, int width, int height) const
 {
-	// TODO: Validate the cell position
+	// TODO: Validate the cell position:: done
 	if (!cellPos.IsValidCell())
 		return;
 
 	int x = GetCellStartX(cellPos) + UI.CellWidth / 4;
 	int y = GetCellStartY(cellPos) + UI.CellHeight / 4;
 
-	// TODO: Complete the implementation of this function
+	pWind->DrawImage(image, x, y, width, height);
+	// TODO: Complete the implementation of this function :: done
 
 }
 
@@ -703,7 +704,11 @@ void Output::DrawAntenna(const CellPosition& cellPos) const
 
 void Output::DrawWorkshop(const CellPosition& cellPos) const
 {
-	// TODO: Validate the cell position
+	// TODO: Validate the cell position ::  done
+	if (cellPos.IsValidCell())
+	{
+		DrawImageInCell
+	}
 
 	// TODO: Draw the workshop image in the cell
 	
@@ -714,7 +719,15 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 void Output::DrawDangerZone(const CellPosition& cellPos) const
 {
     ///TODO: Complete the implementation of the following function
+	if (cellPos.GetCellNum() != 1) {
+		int x1 = GetCellStartX(cellPos);//uper left x
+		int y1 = GetCellStartY(cellPos);//uper left y
 
+		int x2 = x1 + UI.CellWidth;//lower right x
+		int y2 = y1 + UI.CellHeight;//lower right y
+
+		DrawCell(cellPos, RED);
+	}
 
 }
 
@@ -728,11 +741,9 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 
 		int x2 = x1 + UI.CellWidth;//lower right x
 		int y2 = y1 + UI.CellHeight;//lower right y
-		pWind->SetBrush(DARKSLATEBLUE);
-		pWind->DrawRectangle(x1, y1, x2, y2, FILLED, 0, 0);
-
+		
+		DrawCell(cellPos, DARKSLATEBLUE);
 	}
-
 }
 
 
