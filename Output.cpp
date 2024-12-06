@@ -617,7 +617,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 			int y= (beltFromCellX + beltToCellX)/2;
 			int triangleWidth = UI.CellWidth / 4;
 			int triangleHeight = UI.CellHeight / 4;
-			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
+			DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
 		}
 	}
 }
@@ -689,6 +689,10 @@ void Output::DrawAntenna(const CellPosition& cellPos) const
 	// TODO: Validate the cell position
 
 	// TODO: Draw the antenna image in the cell
+	if (cellPos.IsValidCell())
+	{
+		DrawImageInCell(cellPos, "images\\antenna.jpg", UI.CellWidth, UI.CellHeight);
+	}
 
 	
 	

@@ -212,7 +212,7 @@ int main()
 	//		4- from belt_start_3 to belt_end_4 --> Invalid
 	//		5- from belt_end_1 to belt_end_2 --> Invalid
 	// 		6- from belt_end_3 to belt_end_4 --> Invalid
-
+	pOut->DrawBelt(belt_start_1, belt_end_1);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Belts) Test,  Click to continue");
