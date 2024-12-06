@@ -649,14 +649,10 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 			DrawTriangle(CenterX, CenterY, H, W, RIGHT, UI.FlagColor);
 			pWind->SetPen(UI.FlagPoleColor, UI.FlagPoleWidth);
 			pWind->DrawLine(flagPoleStartX, flagPoleStartY, FlagPoleCellEndX, FlagPoleCellEndY);
-
 			//setpenclor w wedith
-
 			//line
-
 		//triangle
-		}
-		
+		}	
 	}
 void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 {
