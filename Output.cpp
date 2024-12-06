@@ -684,11 +684,14 @@ void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 void Output::DrawAntenna(const CellPosition& cellPos) const
 {
 	// TODO: Validate the cell position :: done
+	
 
+	int Highet = UI.CellHeight / 2;
+	int Wedith = UI.CellWidth / 2;
 	// TODO: Draw the antenna image in the cell :: donee
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos, "images\\antenna.jpg", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos, "images\\antenna.jpg",Wedith, Highet);
 	}
 
 	
@@ -698,9 +701,11 @@ void Output::DrawAntenna(const CellPosition& cellPos) const
 void Output::DrawWorkshop(const CellPosition& cellPos) const
 {
 	// TODO: Validate the cell position ::  done
+	int Highet = UI.CellHeight / 2;
+	int Wedith = UI.CellWidth / 2;
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos,"images\\Workshop.jpg", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos,"images\\Workshop.jpg", Wedith, Highet);
 	}
 
 	// TODO: Draw the workshop image in the cell :: done
