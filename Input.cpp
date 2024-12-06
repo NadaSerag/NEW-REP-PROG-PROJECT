@@ -60,16 +60,16 @@ int Input::GetInteger(Output *pO) const
 //======================================================================================//
 
 ActionType Input::GetUserAction() const
-{	
+{
 	int x = -1, y = -1;
-	GetPointClicked(x, y); 
+	GetPointClicked(x, y);
 
 	//  ============ GUI in the Design mode ============
-	if ( UI.InterfaceMode == MODE_DESIGN )	
+	if (UI.InterfaceMode == MODE_DESIGN)
 	{
 		// [1] If user clicks on the Toolbar
-		if ( y >= 0 && y < UI.ToolBarHeight)
-		{	
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
 			// Check which Menu item was clicked
 			// ==> This assumes that menu items are lined up horizontally <==
 
@@ -82,7 +82,7 @@ ActionType Input::GetUserAction() const
 			{
 			case ITM_SET_FLAG_CELL: return SET_FLAG_CELL;
 			case ITM_EXIT: return EXIT;
-			case ITM_SWITCH_TO_PLAY_MODE: return TO_PLAY_MODE;			
+			case ITM_SWITCH_TO_PLAY_MODE: return TO_PLAY_MODE;
 			case ITM_ADD_ANTENNA: return ADD_ANTENNA;
 			case ITM_ADD_BELT: return ADD_BELT;
 			case ITM_ADD_WATERPIT: return ADD_WATERPIT;
@@ -107,9 +107,9 @@ ActionType Input::GetUserAction() const
 		}
 
 		// [2] User clicks on the grid area
-		if ( (y >= UI.ToolBarHeight) && (y < UI.height - UI.StatusBarHeight))
+		if ((y >= UI.ToolBarHeight) && (y < UI.height - UI.StatusBarHeight))
 		{
-			return GRID_AREA;	
+			return GRID_AREA;
 		}
 
 		// [3] User clicks on the status bar
@@ -117,27 +117,39 @@ ActionType Input::GetUserAction() const
 	}
 
 	// ============ GUI in the Play mode ============
-	else	
+	else
 	{
 		///TODO:
-		// perform checks similar to Design mode checks above for the Play Mode
+		// perform checks similar to Design mode checks above for the Play Mode : DONE
 		// and return the corresponding ActionType
-
-		int clickedItemOrder = (x / UI.MenuItemWidth);
-
-		switch (clickedItemOrder)
+		// [1] If user clicks on the Toolbar
+		if (y >= 0 && y < UI.ToolBarHeight)
 		{
-		case ITM_REBOOT_AND_REPAIR: return REBOOT_AND_REPAIR;
-		case ITM_USE_CONSUMABLE: return USE_CONSUMABLE;
-		case ITM_NEW_GAME: return NEW_GAME;
-		case ITM_SWITCH_TO_DESIGN_MODE: return TO_DESIGN_MODE;
-		case ITM_EXIT: return EXIT;
-		default: return EMPTY;
-			// just for now ==> This should be updated :: UPDATED
+			int clickedItemOrder = (x / UI.MenuItemWidth);
 
+			switch (clickedItemOrder)
+			{
+			case ITM_REBOOT_AND_REPAIR: return REBOOT_AND_REPAIR;
+			case ITM_USE_CONSUMABLE: return USE_CONSUMABLE;
+			case ITM_NEW_GAME: return NEW_GAME;
+			case ITM_SWITCH_TO_DESIGN_MODE: return TO_DESIGN_MODE;
+			case ITM_EXIT: return EXIT;
+			default: return EMPTY;
+				// just for now ==> This should be updated :: UPDATED
+
+			}
 		}
-	}	
+		// [2] User clicks on the grid area
+		if ((y >= UI.ToolBarHeight) && (y < UI.height - UI.StatusBarHeight))
+		{
+			return GRID_AREA;
+		}
+
+		// [3] User clicks on the status bar
+		return STATUS;
+	}
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////// 
 
@@ -152,7 +164,7 @@ CellPosition Input::GetCellClicked() const
 	{
 		if ( y >= UI.ToolBarHeight && y <= (UI.height - UI.StatusBarHeight))
 		{
-			///TODO: SetHCell and SetVCell of the object cellPost appropriately
+			///TODO: SetHCell and SetVCell of the object cellPost appropriately :: DONE
 			//       using the coordinates x, y and the appropriate variables of the UI_Info Object (UI)
 			int h = x / UI.CellWidth;
 			int v = (y - UI.ToolBarHeight) / UI.CellHeight;

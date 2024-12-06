@@ -641,7 +641,7 @@ void Output::DrawFlag(const CellPosition& cellPos) const
 	// TODO: 1. Draw the flag pole (the line)
 	int flagPoleStartX = cellStartX + UI.CellWidth / 2;
 	int flagPoleStartY = cellStartY + UI.CellHeight / 4;
-	int CellEndx = CellEndx;
+	//int CellEndx = CellEndx;
 	int;
 	//wedith rb3
 	// hught rob3
