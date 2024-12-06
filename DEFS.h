@@ -11,6 +11,7 @@ enum ActionType // The actions supported (add more as needed)
 	SET_FLAG_CELL,	// Set Flag on a Cell
 	ADD_ANTENNA,
 	ADD_BELT,
+	ADD_VERTICAL_BELT,
 	ADD_WATERPIT,
 	ADD_DANGERZONE,
 	ADD_WORKSHOP,
