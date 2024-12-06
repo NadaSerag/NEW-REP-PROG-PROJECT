@@ -111,8 +111,8 @@ int main()
 	pOut->PrintMessage("2.2- Drawing (DangerZone Cells) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_20(3,8);	// cell num 20
-	CellPosition cell_60(-1,4);	// cell num 60
+	CellPosition cell_20(20);	// cell num 20
+	CellPosition cell_60(60);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
 	pOut->DrawDangerZone(cell_20);
@@ -128,10 +128,10 @@ int main()
 	pOut->PrintMessage("2.3- Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition player_1(4,0);//cell 1
-	CellPosition player_2(4,1);//cell 2
-	CellPosition player_15(2, 18); //invalid cell testcase
-	CellPosition player_99(2, 5); //cell 28
+	CellPosition player_1(1);//cell 1
+	CellPosition player_2(2);//cell 2
+	CellPosition player_15(15); //invalid cell testcase
+	CellPosition player_99(99); //cell 28
 
 
 	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times :: DONE:WORKS (players drawn in the right cells)
@@ -177,7 +177,7 @@ int main()
 	pOut->PrintMessage("2.4- Drawing (Flags) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition flag_1(4,8);
+	CellPosition flag_1(1);
 	/*CellPosition flag_60(-1,4);
 	CellPosition flag_99(99);*/
 
@@ -231,8 +231,8 @@ int main()
 	pOut->PrintMessage("2.6- Drawing (Rotating Gears) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_13(3,1);
-	CellPosition cell_19(3,7);
+	CellPosition cell_13(13);
+	CellPosition cell_19(19);
 
 	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19) :: done
 	//        1. At cell_13 with rotation left (anticlockwise) 
@@ -261,7 +261,7 @@ int main()
 	pOut->PrintMessage("2.8- Drawing (Workshop) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_30(2,7);
+	CellPosition cell_30(30);
 
 	// TODO: Draw Workshop in cell position (cell_30)
 	pOut->DrawWorkshop(cell_30);
@@ -351,7 +351,7 @@ int main()
 	pOut->PrintMessage("4.1- (Setters with Validation) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
-	CellPosition cellpos_1(0, 0);
+	CellPosition cellpos_1(1);
 
 	///TODO:
 	// 1- Ask user to enter an integer and read it using GetInteger():::done
@@ -393,11 +393,10 @@ int main()
 	//			--> it uses the function : GetCellPositionFromNum () inside it
 	// 4- Print the Cell vCell and hCell on the status bar
 	// 5- Repeat the above steps Five TIMES
-	int cellnum = pIn->GetInteger(pOut);
-	CellPosition*cp =& CellPosition(cellnum);
-	int h =cp->HCell();
-	int v = cp->VCell();
-	
+	int cellNum = pIn->GetInteger(pOut);
+	CellPosition cellin(cellNum);
+	int h =cellin.HCell();
+	int v = cellin.VCell();
 	pOut->ClearStatusBar();
 	pOut->PrintMessage("V cell= " + to_string(v) +"Hcell= "+ to_string(h));
 	pOut->ClearStatusBar();
@@ -409,11 +408,13 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	/// TODO:
-	// 1- Read from user two integers representing cellNum and addedNum
+	// 1- Read from user two integers representing cellNum and addedNum:::done
 	// 2- Creates a CellPosition object of cellNum
 	// 3- Use the function AddCellNum() to add the addedNum to the cellNum
 	// 4- Print the vCell and hCell of the new Cell Position on the status bar
 	// 5- Repeat the above steps Four TIMES with each time a different direction
+	int cellnum = pIn->GetInteger(pOut);
+	int addedNum = pIn->GetInteger(pOut);
 
 	pOut->PrintMessage("FINISHED - (AddCellNum) Test, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
