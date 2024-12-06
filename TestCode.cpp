@@ -1,6 +1,7 @@
 #include "Input.h"
 #include "Output.h"
-
+#include <iostream>
+using namespace std;
 
 //NADA'S TESTCODE
 // Nada testcode 2
@@ -370,6 +371,9 @@ int main()
 	//			--> it uses the function : GetCellPositionFromNum () inside it
 	// 4- Print the Cell vCell and hCell on the status bar
 	// 5- Repeat the above steps Five TIMES
+	int cellnum;
+	cin >> cellnum;
+	CellPosition(cellnum);
 
 	pOut->PrintMessage("FINISHED - (GetCellPositionFromNum) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
