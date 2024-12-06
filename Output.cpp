@@ -541,7 +541,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 		// Calculate the horizontal space before drawing players triangles (space from the left border of the cell)
 		int ySpace = UI.CellHeight / 6; // proportional to cell height
 		int wedith = UI.CellWidth / 5;                                                  // for not overlapping with belts
-		int highet = UI.CellHeight / 7;
+		int highet = UI.CellHeight / 5;
 
 		// Note: Players' Triangles Locations depending on "playerNum" is as follows:
 		// Player_0
