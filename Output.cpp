@@ -625,7 +625,6 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-
 	void Output::DrawFlag(const CellPosition & cellPos) const
 	{
 		// TODO: Validate the cell position
@@ -712,13 +711,8 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 void Output::DrawDangerZone(const CellPosition& cellPos) const
 {
     ///TODO: Complete the implementation of the following function
-	if (cellPos.GetCellNum() != 1) {
-		int x1 = GetCellStartX(cellPos);//uper left x
-		int y1 = GetCellStartY(cellPos);//uper left y
-
-		int x2 = x1 + UI.CellWidth;//lower right x
-		int y2 = y1 + UI.CellHeight;//lower right y
-
+	 if(cellPos.GetCellNum() != 1&& cellPos.GetCellNum()<=55) {
+		
 		DrawCell(cellPos, RED);
 	}
 
@@ -728,7 +722,7 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 {
 	///TODO: Complete the implementation of the following function
 	
-	if (cellPos.GetCellNum() != 1) {
+	if (cellPos.GetCellNum() != 1 && cellPos.GetCellNum() <= 55) {
 		//int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
 		
 		 DrawCell(cellPos , DARKSLATEBLUE);
