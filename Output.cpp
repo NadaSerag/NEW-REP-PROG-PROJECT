@@ -589,34 +589,34 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	int toCellStartY = GetCellStartY(toCellPos);
 
 	if (fromCellPos.VCell() == toCellPos.VCell()) {
-	int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
-	int beltToCellX = toCellStartX + UI.BeltXOffset;
-	int beltFromCellY = fromCellStartY + UI.BeltYOffset;
-	int beltToCellY = toCellStartY + UI.BeltYOffset;
+		int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
+		int beltToCellX = toCellStartX + UI.BeltXOffset;
+		int beltFromCellY = fromCellStartY + UI.BeltYOffset;
+		int beltToCellY = toCellStartY + UI.BeltYOffset;
 
-	if (fromCellPos.GetCellNum() < toCellPos.GetCellNum()) {
-		// TODO: Draw the belt line and the triangle at the center of the line pointing to the direction of the belt
+		if (fromCellPos.GetCellNum() < toCellPos.GetCellNum()) {
+			// TODO: Draw the belt line and the triangle at the center of the line pointing to the direction of the belt
 
-		// TODO: 1. Set pen color and width using the appropriate parameters of UI_Info object (UI)
-		pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
-		pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
-		//        2. Draw the line of the belt using the appropriate coordinates
+			// TODO: 1. Set pen color and width using the appropriate parameters of UI_Info object (UI)
+			pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
+			pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
+			//        2. Draw the line of the belt using the appropriate coordinates
 
 
-		// TODO: Draw the triangle at the center of the belt line pointing to the direction of the belt
+			// TODO: Draw the triangle at the center of the belt line pointing to the direction of the belt
 
-		int x = (beltFromCellX + beltToCellX) / 2;
-		int y = beltFromCellY;
-		int triangleWidth = UI.CellWidth / 4;
-		int triangleHeight = UI.CellHeight / 4;
-		DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
+			int x = (beltFromCellX + beltToCellX) / 2;
+			int y = beltFromCellY;
+			int triangleWidth = UI.CellWidth / 4;
+			int triangleHeight = UI.CellHeight / 4;
+			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
+		}
+		else
+		{
+			int x = beltFromCellX;
+			//int y
+		}
 	}
-	else
-	{
-		int x = beltFromCellX;
-		int y
-	}
-
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
