@@ -158,7 +158,7 @@ void Output::ClearToolBar() const
 
 void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangleHeight, int triangleWidth, Direction direction, color triangleColor, drawstyle style, int penWidth) const
 {
-	int x1, y1, x2, y2, x3, y3;
+	int x1=0, y1=0, x2=0, y2=0, x3=0, y3 =0;
 
 	///TODO: Calculate the coordiantes of the 3 vertices of the triangle based on the passed parameters
 
@@ -199,7 +199,9 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 		x3 = triangleCenterX + triangleWidth / 2;
 		y3 = triangleCenterY;
 	}
-
+	pWind->SetBrush(triangleColor);
+	pWind->SetPen(WHITE, penWidth);
+	pWind->DrawTriangle(x1, y1, x2, y2, x3, y3, style);
 	
 }
 
@@ -431,7 +433,7 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 void Output::PrintPlayersInfo(string info)
 {
 	///TODO: Clear what was written on the toolbar
-
+	ClearToolBar();
 	// One of the correct ways to implement the above TODO is to call CreatePlayModeToolBar(); 
 	// to clear what was written in the player info (there are other ways too � You are free to use any)
 
@@ -687,16 +689,16 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 {
 	///TODO: Complete the implementation of the following function
 	
-	CellPosition cellposi = cellPos;
-	int x1 = GetCellStartX(cellPos);//uper left x
-	int y1 = GetCellStartY(cellPos);//uper left y
-	cellposi.AddCellNum(1, RIGHT);
-	cellposi.AddCellNum(1, DOWN);
-	int x2 = GetCellStartX(cellposi);//lower right x
-	int y2 = GetCellStartY(cellposi);//lower right y
-	pWind->SetBrush(DARKSLATEBLUE);
-	pWind->DrawRectangle(x1, y1, x2, y2, FILLED, 0, 0);
-
+		CellPosition cellposi = cellPos;
+		int x1 = GetCellStartX(cellPos);//uper left x
+		int y1 = GetCellStartY(cellPos);//uper left y
+		cellposi.AddCellNum(1, RIGHT);
+		cellposi.AddCellNum(1, DOWN);
+		int x2 = GetCellStartX(cellposi);//lower right x
+		int y2 = GetCellStartY(cellposi);//lower right y
+		pWind->SetBrush(DARKSLATEBLUE);
+		pWind->DrawRectangle(x1, y1, x2, y2, FILLED, 0, 0);
+	
 	
 
 }
