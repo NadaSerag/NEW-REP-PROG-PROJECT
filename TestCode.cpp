@@ -503,7 +503,7 @@ int main()
 
 			case CUT_GAME_OBJECT:
 
-				pOut->PrintMessage("Action: CUT , Click anywhere");
+				pOut->PrintMessage("Action: CUT_GAME_OBJECT , Click anywhere");
 				break;
 
 			case PASTE_GAME_OBJECT:
