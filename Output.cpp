@@ -74,8 +74,8 @@ Output::Output()
 	// Colors of the 2 Players
 	UI.PlayerColors[0] = GOLD;
 	UI.PlayerColors[1] = DARKSLATEBLUE;
-	/*UI.PlayerColors[2] = KHAKI;
-	UI.PlayerColors[3] = CHOCOLATE;*/
+	UI.PlayerColors[2] = KHAKI;
+	UI.PlayerColors[3] = CHOCOLATE;
 
 	// Create the output window
 	pWind = CreateWind(UI.width + 15, UI.height, UI.wx, UI.wy); 
@@ -281,6 +281,7 @@ void Output::CreateDesignModeToolBar() const
 	///TODO: Change the path of the images as needed :: Donee
 	MenuItemImages[ITM_SET_FLAG_CELL] = "images\\flag.jpg";
 	MenuItemImages[ITM_ADD_BELT] = "images\\belt.jpg";
+	MenuItemImages[ITM_ADD_VERTICAL_BELT] = "images\\vertical belt.jpg";
 	MenuItemImages[ITM_ADD_WATERPIT] = "images\\water pit.jpg";
 	MenuItemImages[ITM_ADD_DANGERZONE] = "images\\danger zone.jpg";
 	MenuItemImages[ITM_ADD_WORKSHOP] = "images\\Workshop.jpg";
