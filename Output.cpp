@@ -474,7 +474,8 @@ void Output::PrintPlayersInfo(string info)
 	                           // ( - w ) because x is the coordinate of the start point of the string (upper left)
 	int y = (UI.ToolBarHeight - h) / 2; // in the Middle of the toolbar height
 
-	///TODO: Draw the string "info" in the specified location (x, y) 
+	///TODO: Draw the string "info" in the specified location (x, y) :: done
+
 	pWind->DrawString(x, y, info);
 
 
@@ -686,7 +687,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 	}
 void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 {
-	// TODO: Validate the cell position
+	// TODO: Validate the cell position :: done
 	if (!cellPos.IsValidCell())
 	{
 		return;
