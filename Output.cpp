@@ -158,7 +158,7 @@ void Output::ClearToolBar() const
 
 void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangleHeight, int triangleWidth, Direction direction, color triangleColor, drawstyle style, int penWidth) const
 {
-	int x1=0, y1=0, x2=0, y2=0, x3=0, y3 =0;
+	int x1, y1, x2, y2, x3, y3;
 
 	///TODO: Calculate the coordiantes of the 3 vertices of the triangle based on the passed parameters
 
@@ -179,32 +179,31 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 		x2 = triangleCenterX + triangleWidth / 2;
 		y2 = triangleCenterY - triangleHeight / 2;
 		x3 = triangleCenterX;
-	    y3 = triangleCenterY + triangleHeight / 2;
+		y3 = triangleCenterY + triangleHeight / 2;
 	}
 	if (direction == LEFT)
 	{
 		x1 = triangleCenterX + triangleWidth / 2;
-		y1 = triangleCenterY + triangleHeight / 2;
+		y1 = triangleCenterY - triangleHeight / 2;
 		x2 = triangleCenterX + triangleWidth / 2;
-		y2 = triangleCenterY - triangleHeight / 2;
-		x3 = triangleCenterX- triangleWidth/2;
+		y2 = triangleCenterY + triangleHeight / 2;
+		x3 = triangleCenterX - triangleHeight / 2;
 		y3 = triangleCenterY;
 	}
 	if (direction == RIGHT)
 	{
-		x1 = triangleCenterX - triangleWidth / 2;
-		y1 = triangleCenterY - triangleHeight / 2;
-		x2 = triangleCenterX - triangleWidth / 2;
-		y2 = triangleCenterY +	 triangleHeight / 2;
-		x3 = triangleCenterX + triangleWidth / 2;
+		x1 = triangleCenterX - triangleHeight / 2;
+		y1 = triangleCenterY - triangleWidth / 2;
+		x2 = triangleCenterX - triangleHeight / 2;
+		y2 = triangleCenterY + triangleWidth / 2;
+		x3 = triangleCenterX + triangleHeight / 2;
 		y3 = triangleCenterY;
 	}
+	pWind->SetPen(triangleColor, penWidth);
 	pWind->SetBrush(triangleColor);
-	pWind->SetPen(WHITE, penWidth);
 	pWind->DrawTriangle(x1, y1, x2, y2, x3, y3, style);
-	
-}
 
+}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void Output::DrawImageInCell(const CellPosition& cellPos, string image, int width, int height) const
