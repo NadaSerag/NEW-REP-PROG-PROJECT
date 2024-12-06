@@ -316,16 +316,22 @@ void Output::CreatePlayModeToolBar() const
 
 	// First prepare List of images for each menu item
 	// To control the order of these images in the menu, 
-	// reoder them in UI_Info.h ==> enum DESIGN_MODE_ITEMS
+	// reorder them in UI_Info.h ==> enum DESIGN_MODE_ITEMS
 	// ** MAKE SURE THAT THE IMAGES ARE .JPG FILES **
 	string MenuItemImages[PLAY_ITM_COUNT];
 	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu_SwitchToGrid.jpg";
 
-	///TODO: Change the path of the images as needed
+	///TODO: Change the path of the images as needed // done
 	MenuItemImages[ITM_EXECUTE_COMMANDS] = "images\\Menu_Dice.jpg";
 	MenuItemImages[ITM_SELECT_COMMAND] = "images\\Menu_Dice.jpg";
 
-	///TODO: Prepare images for each menu item and add it to the list
+	
+	MenuItemImages[ITM_REBOOT_AND_REPAIR] = "images\\reboot and repair.jpg";
+	MenuItemImages[ITM_USE_CONSUMABLE] = "images\\consumable.jpg";
+	MenuItemImages[ITM_NEW_GAME] = "images\\new game.jpg";
+	
+
+	///TODO: Prepare images for each menu item and add it to the list // done (didn't change order)
 
 
 
@@ -354,7 +360,7 @@ void Output::CreateCommandsBar(Command savedCommands[], int savedCommandsCount, 
 	CommandItemImages[ROTATE_COUNTERCLOCKWISE] = "images\\rotate anticlockwise.jpg";
 	
 
-	// TODO: Prepare images for more items with .jpg extensions and add them to the list 
+	// TODO: Prepare images for more items with .jpg extensions and add them to the list // done
 
 	DrawSavedCommands(savedCommands, savedCommandsCount, CommandItemImages);
 	DrawAvailableCommands(availableCommands, availableCommandsCount, CommandItemImages);
