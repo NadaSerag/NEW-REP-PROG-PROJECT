@@ -112,7 +112,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition cell_20(3,8);	// cell num 20
-	CellPosition cell_60(60);	// cell num 60
+	CellPosition cell_60(1,4);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
 	pOut->DrawDangerZone(cell_20);
@@ -128,8 +128,8 @@ int main()
 	pOut->PrintMessage("2.3- Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition player_1(1);
-	CellPosition player_2(2);
+	CellPosition player_1(4,0);
+	CellPosition player_2(4,1);
 	CellPosition player_15(2, 18);
 	CellPosition player_99(2, 5);
 
@@ -249,7 +249,7 @@ int main()
 	pOut->PrintMessage("2.7- Drawing (Antenna) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_25(25);
+	CellPosition cell_25(2,2);
 	
 	// TODO: Draw Antenna in cell position (cell_25)
 	pOut->DrawAntenna(cell_25);
@@ -262,7 +262,7 @@ int main()
 	pOut->PrintMessage("2.8- Drawing (Workshop) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_30(30);
+	CellPosition cell_30(2,7);
 
 	// TODO: Draw Workshop in cell position (cell_30)
 	pOut->DrawWorkshop(cell_30);
