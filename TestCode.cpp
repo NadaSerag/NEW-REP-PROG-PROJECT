@@ -348,12 +348,18 @@ int main()
 	CellPosition cellpos_1(0, 0);
 
 	///TODO:
-	// 1- Ask user to enter an integer and read it using GetInteger()
-	// 2- Call SetVCell() of cellpos_1 with that integer
-	// 3- Print GetVCell() of cellpos_1 as follows: "Now the vCell = 5" (assuming the entered integer is 5)
-	// 4- Call GetPointClicked()
+	// 1- Ask user to enter an integer and read it using GetInteger():::done
+	// 2- Call SetVCell() of cellpos_1 with that integer:::done
+	// 3- Print GetVCell() of cellpos_1 as follows: "Now the vCell = 5" (assuming the entered integer is 5):::done
+	// 4- Call GetPointClicked():::done
 	// 5- Repeat the above steps FIVE TIMES
 	// 6- Repeat all the above steps to test SetHCell() function instead with the needed modifications
+	pOut->PrintMessage("Enter an integer to set Vcell ");
+	int V_int=pIn->GetInteger(pOut);
+	pOut->ClearStatusBar();
+	cellpos_1.SetVCell(V_int);
+	pOut->PrintMessage("Now the vCell=  "+to_string(cellpos_1.VCell()));
+	pIn->GetPointClicked(x,y);
 
 	pOut->PrintMessage("FINISHED - (Setters with Validation) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
