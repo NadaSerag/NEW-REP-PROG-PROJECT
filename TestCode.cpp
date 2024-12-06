@@ -249,8 +249,8 @@ int main()
 	pOut->DrawBelt(belt_start_2, belt_end_2);
 	pOut->DrawBelt(belt_start_3, belt_end_3);
 	pOut->DrawBelt(belt_start_3 ,belt_end_4);
-	//pOut->DrawBelt(belt_start_1, belt_end_2);
-	pOut->DrawBelt(belt_start_3, belt_end_4);
+	pOut->DrawBelt(belt_end_1, belt_end_2);
+	//pOut->DrawBelt(belt_end_3, belt_end_4);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Belts) Test,  Click to continue");
@@ -400,7 +400,6 @@ int main()
 		
 		pOut->PrintMessage("Enter an integer to set Vcell ");
 		V_int = pIn->GetInteger(pOut);
-	
 		cellpos_1.SetVCell(V_int);
 		pOut->PrintMessage("Now the vCell=  " + to_string(cellpos_1.VCell()));
 		pIn->GetPointClicked(x, y);
