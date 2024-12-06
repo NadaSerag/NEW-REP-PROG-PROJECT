@@ -326,8 +326,8 @@ void Output::CreatePlayModeToolBar() const
 	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu_SwitchToGrid.jpg";
 
 	///TODO: Change the path of the images as needed // done
-	MenuItemImages[ITM_EXECUTE_COMMANDS] = "images\\Menu_Dice.jpg";
-	MenuItemImages[ITM_SELECT_COMMAND] = "images\\Menu_Dice.jpg";
+	MenuItemImages[ITM_EXECUTE_COMMANDS] = "images\\execute.jpg";
+	MenuItemImages[ITM_SELECT_COMMAND] = "images\\select.jpg";
 
 	
 	MenuItemImages[ITM_REBOOT_AND_REPAIR] = "images\\reboot and repair.jpg";
