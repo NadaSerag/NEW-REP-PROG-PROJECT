@@ -56,10 +56,10 @@ int main()
 
 	///TODO: Draw the command bar with only 4 available commands and 4 empty slots for saved commands
 	// done for now ~s
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 4; i++)
 		savedCommands[i] = NO_COMMAND;
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 4; i++)
 		availableCommands[i] = MOVE_BACKWARD_ONE_STEP;
 	pOut->CreateCommandsBar(savedCommands, 4, availableCommands, 4);
 
@@ -74,11 +74,15 @@ int main()
 	///		and the first available command will be NO_COMMAND
 	// done for now ~s
 	
-	for (int i = 0; i < 5; i++)
-		savedCommands[i] = MOVE_FORWARD_ONE_STEP;
+	for (int i = 1; i < 5; i++) {
+		savedCommands[0] = MOVE_FORWARD_ONE_STEP;
+		savedCommands[i] = NO_COMMAND;
+	}
 
-	for (int i = 0; i < 10; i++)
-		availableCommands[i] = NO_COMMAND;
+
+	for (int i = 0; i < 7; i++) {
+		availableCommands[i] = Command(i);
+	}
 	pOut->CreateCommandsBar(savedCommands, 5, availableCommands, 7);
 
 
@@ -91,12 +95,16 @@ int main()
 	///TODO: Draw the command bar with 5 saved commands and 6 available commands,
 	/// 	but the first saved command will be MOVE_FORWARD_TWO_STEPS
 	///		and the first available command will be NO_COMMAND as previous test
+	// done for now ~s
 	
-	for (int i = 0; i < 5; i++)
-		savedCommands[i] = MOVE_FORWARD_TWO_STEPS;
+	for (int i = 1; i < 5; i++){
+		savedCommands[0] = MOVE_FORWARD_TWO_STEPS;
+		savedCommands[i] = NO_COMMAND;
+	}
 
-	for (int i = 0; i < 10; i++)
-		availableCommands[i] = NO_COMMAND;
+	for (int i = 0; i < 6; i++)
+		availableCommands[i] = Command(i);
+
 	pOut->CreateCommandsBar(savedCommands, 5, availableCommands, 6);
 	
 
@@ -432,6 +440,7 @@ int main()
 		 numprint = cellposition.GetCellNum();
 		
 		pOut->PrintMessage("CellNum = " + to_string(numprint));
+		pIn->GetPointClicked(x, y);
 	}
 	
 	pOut->PrintMessage("FINISHED - (GetCellNumFromPosition) Test, Click to continue");
@@ -457,7 +466,7 @@ int main()
 		 v = cellin.VCell();
 		
 		pOut->PrintMessage("V cell= " + to_string(v) + "Hcell= " + to_string(h));
-		
+		pIn->GetPointClicked(x, y);
 	}
 	
 	pOut->PrintMessage("FINISHED - (GetCellPositionFromNum) Test, Click to continue");
@@ -477,19 +486,20 @@ int main()
 	CellPosition cellposofup(cellnum);
 	cellposofup.AddCellNum(addednum, UP);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofup.VCell()) + "new Hcell= " + to_string(cellposofup.HCell()));
-
+	pIn->GetPointClicked(x, y);
 	CellPosition cellposofdown(cellnum);
 	cellposofdown.AddCellNum(addednum, DOWN);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofdown.VCell()) + "new Hcell= " + to_string(cellposofdown.HCell()));
-
+	pIn->GetPointClicked(x, y);
 	CellPosition cellposofr(cellnum);
 	cellposofr.AddCellNum(addednum, RIGHT);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofr.VCell()) + "new Hcell= " + to_string(cellposofr.HCell()));
-
+	pIn->GetPointClicked(x, y);
 
 	CellPosition cellposofl(cellnum);
 	cellposofl.AddCellNum(addednum, LEFT);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofl.VCell()) + "new Hcell= " + to_string(cellposofl.HCell()));
+	pIn->GetPointClicked(x, y);
 
 	pOut->PrintMessage("FINISHED - (AddCellNum) Test, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
