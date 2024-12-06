@@ -463,7 +463,12 @@ int main()
 
 			case ADD_BELT:
 
-				pOut->PrintMessage("Action: ADD_BELT , Click anywhere");
+				pOut->PrintMessage("Action: ADD_BELT (HORIZONTALLY) , Click anywhere");
+				break;
+
+			case ADD_VERTICAL_BELT:
+
+				pOut->PrintMessage("Action: ADD_BELT (VERTICALLY) , Click anywhere");
 				break;
 
 			case ADD_WATERPIT:

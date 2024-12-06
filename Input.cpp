@@ -85,6 +85,7 @@ ActionType Input::GetUserAction() const
 			case ITM_SWITCH_TO_PLAY_MODE: return TO_PLAY_MODE;
 			case ITM_ADD_ANTENNA: return ADD_ANTENNA;
 			case ITM_ADD_BELT: return ADD_BELT;
+			case ITM_ADD_VERTICAL_BELT: return ADD_VERTICAL_BELT;
 			case ITM_ADD_WATERPIT: return ADD_WATERPIT;
 			case ITM_ADD_DANGERZONE: return ADD_DANGERZONE;
 			case ITM_ADD_WORKSHOP: return ADD_WORKSHOP;
