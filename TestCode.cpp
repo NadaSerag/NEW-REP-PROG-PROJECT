@@ -94,9 +94,9 @@ int main()
 	pOut->PrintMessage("2.1- Drawing (Water Pits Cells) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_10(10);	// cell num 10
-	CellPosition cell_53(53);	// cell num 53
-	CellPosition cell_1(1);		// cell num 1
+	CellPosition cell_10(4,9);	// cell num 10
+	CellPosition cell_53(0,8);	// cell num 53
+	CellPosition cell_1(4,0);		// cell num 1
 
 	// TODO: Draw Water Pits in cell_10 and cell_53 and cell_1 (Invalid)
 	pOut->DrawWaterPit(cell_10);
@@ -111,7 +111,7 @@ int main()
 	pOut->PrintMessage("2.2- Drawing (DangerZone Cells) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_20(20);	// cell num 20
+	CellPosition cell_20(3,8);	// cell num 20
 	CellPosition cell_60(60);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
@@ -213,6 +213,11 @@ int main()
 	//		5- from belt_end_1 to belt_end_2 --> Invalid
 	// 		6- from belt_end_3 to belt_end_4 --> Invalid
 	pOut->DrawBelt(belt_start_1, belt_end_1);
+	pOut->DrawBelt(belt_start_2, belt_end_2);
+	pOut->DrawBelt(belt_start_3, belt_end_3);
+	pOut->DrawBelt(belt_start_3 ,belt_end_4);
+	pOut->DrawBelt(belt_start_1, belt_end_2);
+	pOut->DrawBelt(belt_start_3, belt_end_4);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Belts) Test,  Click to continue");
@@ -233,6 +238,8 @@ int main()
 	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19)
 	//        1. At cell_13 with rotation left (anticlockwise)
 	//        2. At cell_19 with rotation right (clockwise)
+	pOut->DrawRotatingGear(cell_13, false);
+	pOut->DrawRotatingGear(cell_19, true);
 
 	pOut->PrintMessage("FINISHED - Drawing (Rotating Gears) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
