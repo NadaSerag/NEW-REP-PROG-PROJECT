@@ -145,8 +145,7 @@ CellPosition CellPosition::GetCellPositionFromNum(int cellNum)
 		position.SetVCell(index_v);
 		return position;
 	}
-	else
-		return 0;
+	
 	// Note: use the passed cellNum to set the vCell and hCell of the "position" variable declared inside the function
 	//       I mean: position.SetVCell(...) and position.SetHCell(...) then return it
 
