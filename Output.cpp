@@ -115,7 +115,7 @@ Input* Output::CreateInput() const
 
 int Output::GetCellStartX(const CellPosition & cellPos) const
 {
-	///TODO: implement the following function as described in Output.h file
+	///TODO: implement the following function as described in Output.h file // already done 
 	
 	if (cellPos.IsValidCell())
 	{
@@ -132,7 +132,7 @@ int Output::GetCellStartX(const CellPosition & cellPos) const
 
 int Output::GetCellStartY(const CellPosition & cellPos) const
 {
-	///TODO: implement the following function as described in Output.h file
+	///TODO: implement the following function as described in Output.h file // already done 
 	
 	if (cellPos.IsValidCell())
 	{
