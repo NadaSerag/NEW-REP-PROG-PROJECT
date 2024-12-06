@@ -113,7 +113,7 @@ CellPosition CellPosition::GetCellPositionFromNum(int cellNum)
 	/// TODO: Implement this function as described in the .h file:::done
 	int index_h;
 	int index_v;
-	if (1 <= cellNum <= 55) {
+	if (1 <= cellNum&&cellNum <= 55) {
 		if ((((11 - 10 * cellNum) % 11) - 1) != 0)
 		{
 			index_h = ((11 - 10 * cellNum) % 11) - 1;
