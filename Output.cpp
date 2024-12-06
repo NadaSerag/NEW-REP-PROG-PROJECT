@@ -601,14 +601,20 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 			int triangleHeight = UI.CellHeight / 4;
 			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
 		}
-		//else if (fromCellPos.VCell() == toCellPos.VCell())
-		
-		//int x = beltFromCellX;
-		//int y = (beltFromCellX + beltToCellX) / 2;
-		//int triangleWidth = UI.CellWidth / 4;
-		//int triangleHeight = UI.CellHeight / 4;
-		//DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
-
+		else if (fromCellPos.VCell() == toCellPos.VCell())
+		{
+			int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
+			int beltToCellX = toCellStartX + UI.BeltXOffset;
+			int beltFromCellY = fromCellStartY + UI.BeltYOffset;
+			int beltToCellY = toCellStartY + UI.BeltYOffset;
+			pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
+			pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
+			int x = beltFromCellX;
+			int y = (beltFromCellX + beltToCellX) / 2;
+			int triangleWidth = UI.CellWidth / 4;
+			int triangleHeight = UI.CellHeight / 4;
+			DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
+		}
 		
 	}
 }
