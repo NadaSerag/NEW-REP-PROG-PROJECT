@@ -50,8 +50,6 @@ int Input::GetInteger(Output *pO) const
 	string l = GetSrting(pO);
 	return stoi(l);
 
-
-
 	// Note: stoi(s) converts string s into its equivalent integer (for example, "55" is converted to 55)
 
 	//return 0; // this line should be changed with your implementation
@@ -138,10 +136,7 @@ ActionType Input::GetUserAction() const
 			// just for now ==> This should be updated :: UPDATED
 
 		}
-
-
 	}	
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////// 
