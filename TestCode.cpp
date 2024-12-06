@@ -128,7 +128,7 @@ int main()
 	pOut->PrintMessage("2.3- Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition player_1(4,0);
+	CellPosition player_1(2,5);
 	CellPosition player_2(4,1);
 	CellPosition player_15(2, 18);
 	CellPosition player_99(2, 5);
@@ -136,7 +136,6 @@ int main()
 
 	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times
 	///       to draw the following players:
-	pOut->DrawPlayer(player_1, 1,TURQUOISE , UP);
 	///       playerNum (0) with color (PlayerColors[0] defined in UI object) 
 	///			in cell position (player_1 declared above) pointing to right direction 
 	/// 
