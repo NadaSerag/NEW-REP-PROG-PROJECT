@@ -53,8 +53,16 @@ int main()
 	pOut->PrintMessage("1.1.2- Testing the Command bar in the Game mode, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
+
 	///TODO: Draw the command bar with only 4 available commands and 4 empty slots for saved commands
-	
+	// done for now ~s
+	for (int i = 0; i < 5; i++)
+		savedCommands[i] = NO_COMMAND;
+
+	for (int i = 0; i < 10; i++)
+		availableCommands[i] = MOVE_BACKWARD_ONE_STEP;
+	pOut->CreateCommandsBar(savedCommands, 4, availableCommands, 4);
+
 
 	pOut->PrintMessage("1.1.2- Finished Testing the Command bar in the Game mode, Click to continue");
 
@@ -64,6 +72,15 @@ int main()
 	///TODO: Draw the command bar with 5 saved commands and 7 available commands, 
 	/// 	but the first saved command will be MOVE_FORWARD_ONE_STEP
 	///		and the first available command will be NO_COMMAND
+	// done for now ~s
+	
+	for (int i = 0; i < 5; i++)
+		savedCommands[i] = MOVE_FORWARD_ONE_STEP;
+
+	for (int i = 0; i < 10; i++)
+		availableCommands[i] = NO_COMMAND;
+	pOut->CreateCommandsBar(savedCommands, 5, availableCommands, 7);
+
 
 	
 	pOut->PrintMessage("1.1.3- Finished Testing the Command bar in the Game mode, Click to continue");
@@ -74,6 +91,13 @@ int main()
 	///TODO: Draw the command bar with 5 saved commands and 6 available commands,
 	/// 	but the first saved command will be MOVE_FORWARD_TWO_STEPS
 	///		and the first available command will be NO_COMMAND as previous test
+	
+	for (int i = 0; i < 5; i++)
+		savedCommands[i] = MOVE_FORWARD_TWO_STEPS;
+
+	for (int i = 0; i < 10; i++)
+		availableCommands[i] = NO_COMMAND;
+	pOut->CreateCommandsBar(savedCommands, 5, availableCommands, 6);
 	
 
 	pOut->PrintMessage("1.1.4- Finished Testing the Command bar in the Game mode, Click to continue");
@@ -130,8 +154,9 @@ int main()
 
 	CellPosition player_1(1);//cell 1
 	CellPosition player_2(2);//cell 2
-	CellPosition player_15(15); //invalid cell testcase
-	CellPosition player_99(99); //cell 28
+	CellPosition player_15(2,18); //invalid cell testcase
+	CellPosition player_99(2,5); //cell 28
+
 
 
 	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times :: DONE:WORKS (players drawn in the right cells)
@@ -178,7 +203,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition flag_1(9);
-	CellPosition flag_60(-1,4);
+	CellPosition flag_60(60);
 	CellPosition flag_99(99);
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)::done
@@ -196,13 +221,14 @@ int main()
 	pOut->PrintMessage("2.5- Drawing (Belts) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition belt_start_1(4,0);
-	CellPosition belt_end_1(4,5);
-	CellPosition belt_start_2(3,0);
-	CellPosition belt_end_2(0,0);
-	CellPosition belt_start_3(0,9);
-	CellPosition belt_end_3(2,9);
-	CellPosition belt_end_4(2,10);
+	
+	CellPosition belt_start_1(1);
+	CellPosition belt_end_1(5);
+	CellPosition belt_start_2(12);
+	CellPosition belt_end_2(45);
+	CellPosition belt_start_3(54);
+	CellPosition belt_end_3(32);
+	CellPosition belt_end_4(33);
 
 	// TODO: Draw 5 belts
 	//		1- from belt_start_1 to belt_end_1
