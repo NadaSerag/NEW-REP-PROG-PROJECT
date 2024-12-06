@@ -115,7 +115,9 @@ int main()
 	CellPosition cell_60(60);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
-	
+	pOut->DrawDangerZone(cell_20);
+	pOut->DrawDangerZone(cell_60);
+	pOut->DrawDangerZone(cell_1); 
 
 	pOut->PrintMessage("FINISHED - Drawing (DangerZone) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -134,7 +136,7 @@ int main()
 
 	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times
 	///       to draw the following players:
-	pOut->DrawPlayer(player_1, 1, DARKSLATEBLUE, UP);
+	pOut->DrawPlayer(player_1, 1,TURQUOISE , UP);
 	///       playerNum (0) with color (PlayerColors[0] defined in UI object) 
 	///			in cell position (player_1 declared above) pointing to right direction 
 	/// 
@@ -243,7 +245,7 @@ int main()
 	CellPosition cell_25(25);
 	
 	// TODO: Draw Antenna in cell position (cell_25)
-
+	pOut->DrawAntenna(cell_25);
 	pOut->PrintMessage("FINISHED - Drawing (Antenna) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -256,7 +258,7 @@ int main()
 	CellPosition cell_30(30);
 
 	// TODO: Draw Workshop in cell position (cell_30)
-	
+	pOut->DrawWorkshop(cell_30);
 	pOut->PrintMessage("FINISHED - Drawing (Workshop) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -379,10 +381,10 @@ int main()
 	//			--> it uses the function : GetCellPositionFromNum () inside it
 	// 4- Print the Cell vCell and hCell on the status bar
 	// 5- Repeat the above steps Five TIMES
-	int cellnum =pIn->GetInteger(pOut);
+	/*int cellnum = pIn->GetInteger(pOut);
 	CellPosition*cp=& CellPosition(cellnum);
 	int h =cp->HCell();
-	int v = cp->VCell();
+	int v = cp->VCell();*/
 	
 	pOut->ClearStatusBar();
 	

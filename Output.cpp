@@ -708,15 +708,15 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 void Output::DrawDangerZone(const CellPosition& cellPos) const
 {
     ///TODO: Complete the implementation of the following function
-	if (cellPos.GetCellNum() != 1) {
-		int x1 = GetCellStartX(cellPos);//uper left x
-		int y1 = GetCellStartY(cellPos);//uper left y
+	//if (cellPos.GetCellNum() != 1) {
+		//int x1 = GetCellStartX(cellPos);//uper left x
+		//int y1 = GetCellStartY(cellPos);//uper left y
 
-		int x2 = x1 + UI.CellWidth;//lower right x
-		int y2 = y1 + UI.CellHeight;//lower right y
+		//int x2 = x1 + UI.CellWidth;//lower right x
+		//int y2 = y1 + UI.CellHeight;//lower right y
 
 		DrawCell(cellPos, RED);
-	}
+	//}
 
 }
 
