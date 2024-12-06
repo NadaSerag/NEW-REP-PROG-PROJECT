@@ -241,7 +241,7 @@ int main()
 	pOut->DrawBelt(belt_start_2, belt_end_2);
 	pOut->DrawBelt(belt_start_3, belt_end_3);
 	pOut->DrawBelt(belt_start_3 ,belt_end_4);
-	pOut->DrawBelt(belt_start_1, belt_end_2);
+	//pOut->DrawBelt(belt_start_1, belt_end_2);
 	pOut->DrawBelt(belt_start_3, belt_end_4);
 
 
