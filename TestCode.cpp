@@ -150,7 +150,14 @@ int main()
 	///       playerNum (-1) with color (PlayerColors[1] defined in UI object) 
 	///			in cell position (player_99 declared above) pointing left--> Invalid
 
-	
+	pOut->DrawPlayer(player_1, 0, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, 1, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, 2, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, 3, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, 0, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, 1, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, 5, UI.PlayerColors[0], RIGHT);
+	pOut->DrawPlayer(player_1, -1, UI.PlayerColors[0], RIGHT);
 	pOut->PrintMessage("FINISHED - Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
@@ -165,6 +172,9 @@ int main()
 	CellPosition flag_99(99);
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
+	pOut->DrawFlag(flag_1);
+	pOut->DrawFlag(flag_60);
+	pOut->DrawFlag(flag_99);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
