@@ -665,7 +665,7 @@ void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 	int Highet = UI.CellHeight / 2;
 	int Wedith = UI.CellWidth / 2;
 
-	// TODO: Draw the rotating gear image in the cell based on the passed direction (clockwise or counter clockwise)
+	// TODO: Draw the rotating gear image in the cell based on the passed direction (clockwise or counter clockwise) :: done
 	if (clockwise)
 	{
 		DrawImageInCell(cellPos, "images\\rotating gear2.jpg", Wedith, Highet);
@@ -678,9 +678,9 @@ void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 
 void Output::DrawAntenna(const CellPosition& cellPos) const
 {
-	// TODO: Validate the cell position
+	// TODO: Validate the cell position :: done
 
-	// TODO: Draw the antenna image in the cell
+	// TODO: Draw the antenna image in the cell :: donee
 	if (cellPos.IsValidCell())
 	{
 		DrawImageInCell(cellPos, "images\\antenna.jpg", UI.CellWidth, UI.CellHeight);
@@ -698,15 +698,13 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 		DrawImageInCell(cellPos,"images\\Workshop .jpg", UI.CellWidth, UI.CellHeight);
 	}
 
-	// TODO: Draw the workshop image in the cell
+	// TODO: Draw the workshop image in the cell :: done
 	
-
-
 }
 
 void Output::DrawDangerZone(const CellPosition& cellPos) const
 {
-    ///TODO: Complete the implementation of the following function
+    ///TODO: Complete the implementation of the following function :: donee
 	 if(cellPos.GetCellNum() != 1&& cellPos.GetCellNum()<=55) {
 		
 		DrawCell(cellPos, RED);
@@ -716,7 +714,7 @@ void Output::DrawDangerZone(const CellPosition& cellPos) const
 
 void Output::DrawWaterPit(const CellPosition& cellPos) const
 {
-	///TODO: Complete the implementation of the following function
+	///TODO: Complete the implementation of the following function :: donee
 	
 	if (cellPos.GetCellNum() != 1 && cellPos.GetCellNum() <= 55) {
 		//int y =GetCellStartY(cellPos) + UI.ToolBarHeight;

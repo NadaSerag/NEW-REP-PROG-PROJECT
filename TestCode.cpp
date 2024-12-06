@@ -290,9 +290,9 @@ int main()
 	//    (assuming the entered number is 116)
 	// 3- Call GetPointClicked() function
 
-	//Done, not 100% sure
+	//Done
 	int received = pIn->GetInteger(pOut);
-	pOut->PrintMessage("You Entered: 116");
+	pOut->PrintMessage("You Entered: " +to_string(received));
 	pIn->GetPointClicked(x, y);
 	///////////////////////////
 
@@ -314,7 +314,7 @@ int main()
 	for (int i = 0; i < 6; i++)
 	{
 		pIn->GetCellClicked();
-		pOut->PrintMessage("(GetCellClicked) Test, vCell =, hCell= ");
+		pOut->PrintMessage("(GetCellClicked) Test, vCell = " + to_string((pIn->GetCellClicked()).VCell()) + ", hCell = " + to_string((pIn->GetCellClicked()).HCell()));
 	}
 
 	pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");
@@ -328,13 +328,13 @@ int main()
 
 
 	///TODO: Add code here to 
-	// 1- Read a string from the user on the status bar :: does reading mean only calling?
+	// 1- Read a string from the user on the status bar :: done
 	// 2- After reading the string clear the status bar :: done
 	// 3- print on the status bar "You Entered" then print the string :: done
 	// NOTE: GetString() is already implemented. It is just required from you to call it
 	pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
-	pOut->PrintMessage("You Entered (GetString)");
+	pOut->PrintMessage("You Entered " + pIn->GetSrting(pOut) );
 
 	pOut->PrintMessage("FINISHED - (GetSrting) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
