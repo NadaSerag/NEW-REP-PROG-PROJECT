@@ -432,6 +432,7 @@ int main()
 		 numprint = cellposition.GetCellNum();
 		
 		pOut->PrintMessage("CellNum = " + to_string(numprint));
+		pIn->GetPointClicked(x, y);
 	}
 	
 	pOut->PrintMessage("FINISHED - (GetCellNumFromPosition) Test, Click to continue");
@@ -457,7 +458,7 @@ int main()
 		 v = cellin.VCell();
 		
 		pOut->PrintMessage("V cell= " + to_string(v) + "Hcell= " + to_string(h));
-		
+		pIn->GetPointClicked(x, y);
 	}
 	
 	pOut->PrintMessage("FINISHED - (GetCellPositionFromNum) Test, Click to continue");
