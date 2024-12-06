@@ -699,7 +699,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 	// TODO: Validate the cell position ::  done
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell
+		DrawImageInCell(cellPos,"Workshop", UI.CellWidth, UI.CellHeight);
 	}
 
 	// TODO: Draw the workshop image in the cell
