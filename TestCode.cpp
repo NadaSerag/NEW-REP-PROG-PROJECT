@@ -112,7 +112,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition cell_20(3,8);	// cell num 20
-	CellPosition cell_60(1,4);	// cell num 60
+	CellPosition cell_60(-1,4);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
 	pOut->DrawDangerZone(cell_20);
