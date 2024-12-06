@@ -604,7 +604,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 		}
 		else if (fromCellPos.HCell() == toCellPos.HCell())
 		{
-			int beltFromCellX = fromCellStartX +UI.BeltXOffset;
+			int beltFromCellX = fromCellStartX  + UI.BeltXOffset;
 			int beltToCellX = toCellStartX + UI.BeltXOffset;
 			int beltFromCellY = fromCellStartY + UI.BeltYOffset;
 			int beltToCellY = toCellStartY +(UI.CellHeight/2)- UI.BeltYOffset;
