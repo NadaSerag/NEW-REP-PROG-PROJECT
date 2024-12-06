@@ -183,8 +183,8 @@ int main()
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
 	pOut->DrawFlag(flag_1);
-	//pOut->DrawFlag(flag_60);
-	////pOut->DrawFlag(flag_99);
+	/*pOut->DrawFlag(flag_60);
+	pOut->DrawFlag(flag_99);*/
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
