@@ -209,7 +209,7 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 void Output::DrawImageInCell(const CellPosition& cellPos, string image, int width, int height) const
 {
 
-	// TODO: Validate the cell position:: done
+	// TODO: Validate the cell position:: donee
 
 	if (!cellPos.IsValidCell())
 		return;
