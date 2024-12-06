@@ -601,7 +601,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 			int triangleHeight = UI.CellHeight / 4;
 			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
 		}
-		else if (fromCellPos.VCell() == toCellPos.VCell())
+		else if (fromCellPos.HCell() == toCellPos.HCell())
 		{
 			int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
 			int beltToCellX = toCellStartX + UI.BeltXOffset;
