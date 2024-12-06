@@ -45,7 +45,7 @@ string Input::GetSrting(Output *pO) const
 int Input::GetInteger(Output *pO) const 
 {
 
-	///TODO: implement the GetInteger function as described in Input.h file 
+	///TODO: implement the GetInteger function as described in Input.h file :: done for now
 	//       using function GetString() defined above and function stoi()
 	string l = GetSrting(pO);
 	return stoi(l);
