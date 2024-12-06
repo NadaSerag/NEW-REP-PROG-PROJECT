@@ -578,12 +578,11 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 		return;
 	}
 	else {
-		// Get the start X and Y coordinates of the upper left corner of the fromCell and toCell
 		int fromCellStartX = GetCellStartX(fromCellPos);
 		int fromCellStartY = GetCellStartY(fromCellPos);
 		int toCellStartX = GetCellStartX(toCellPos);
 		int toCellStartY = GetCellStartY(toCellPos);
-
+		// Get the start X and Y coordinates of the upper left corner of the fromCell and toCell
 		if (fromCellPos.VCell() == toCellPos.VCell())
 		{
 			int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
@@ -604,15 +603,15 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 		}
 		//else if (fromCellPos.VCell() == toCellPos.VCell())
 		
-			//int x = beltFromCellX;
-			//int y = (beltFromCellX + beltToCellX) / 2;
-			//int triangleWidth = UI.CellWidth / 4;
-			//int triangleHeight = UI.CellHeight / 4;
-			//DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
-	
+		//int x = beltFromCellX;
+		//int y = (beltFromCellX + beltToCellX) / 2;
+		//int triangleWidth = UI.CellWidth / 4;
+		//int triangleHeight = UI.CellHeight / 4;
+		//DrawTriangle(x, y, triangleHeight, triangleWidth, UP, UI.BeltColor);
+
+		
 	}
 }
-	
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
