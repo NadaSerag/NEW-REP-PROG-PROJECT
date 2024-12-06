@@ -614,7 +614,10 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 		else
 		{
 			int x = beltFromCellX;
-			//int y;
+			int y= (beltFromCellX + beltToCellX)/2;
+			int triangleWidth = UI.CellWidth / 4;
+			int triangleHeight = UI.CellHeight / 4;
+			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
 		}
 	}
 }
