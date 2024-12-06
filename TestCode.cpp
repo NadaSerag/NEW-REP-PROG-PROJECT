@@ -371,9 +371,9 @@ int main()
 	//			--> it uses the function : GetCellPositionFromNum () inside it
 	// 4- Print the Cell vCell and hCell on the status bar
 	// 5- Repeat the above steps Five TIMES
-	int cellnum;
-	cin >> cellnum;
-	CellPosition(cellnum);
+	int cellnumm;
+	cin >> cellnumm;
+	CellPosition(cellnumm);
 
 	pOut->PrintMessage("FINISHED - (GetCellPositionFromNum) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
