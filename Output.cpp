@@ -606,7 +606,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 			int beltFromCellX = fromCellStartX +UI.BeltXOffset;
 			int beltToCellX = toCellStartX + UI.BeltXOffset;
 			int beltFromCellY = fromCellStartY + UI.BeltYOffset;
-			int beltToCellY = toCellStartY +UI.CellHeight- UI.BeltYOffset;
+			int beltToCellY = toCellStartY +(UI.CellHeight/2)- UI.BeltYOffset;
 			pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
 			pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
 			int x = beltFromCellX;
