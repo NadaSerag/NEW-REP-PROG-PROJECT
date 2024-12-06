@@ -112,7 +112,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition cell_20(3,8);	// cell num 20
-	CellPosition cell_60(1,4);	// cell num 60
+	CellPosition cell_60(-1,4);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
 	pOut->DrawDangerZone(cell_20);
@@ -128,13 +128,13 @@ int main()
 	pOut->PrintMessage("2.3- Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition player_1(4,0);
-	CellPosition player_2(4,1);
-	CellPosition player_15(2, 18);
-	CellPosition player_99(2, 5);
+	CellPosition player_1(4,0);//cell 1
+	CellPosition player_2(4,1);//cell 2
+	CellPosition player_15(2, 18); //invalid cell testcase
+	CellPosition player_99(2, 5); //cell 28
 
 
-	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times
+	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times :: DONE:WORKS (players drawn in the right cells)
 	///       to draw the following players:
 	///       playerNum (0) with color (PlayerColors[0] defined in UI object) 
 	///			in cell position (player_1 declared above) pointing to right direction 
