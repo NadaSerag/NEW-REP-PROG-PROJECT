@@ -400,7 +400,6 @@ int main()
 		
 		pOut->PrintMessage("Enter an integer to set Vcell ");
 		V_int = pIn->GetInteger(pOut);
-	
 		cellpos_1.SetVCell(V_int);
 		pOut->PrintMessage("Now the vCell=  " + to_string(cellpos_1.VCell()));
 		pIn->GetPointClicked(x, y);
