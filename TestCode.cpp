@@ -128,7 +128,7 @@ int main()
 	pOut->PrintMessage("2.3- Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition player_1(0,0);
+	CellPosition player_1(4,0);
 	CellPosition player_2(4,1);
 	CellPosition player_15(2, 18);
 	CellPosition player_99(2, 5);
