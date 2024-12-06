@@ -285,9 +285,9 @@ int main()
 	//    (assuming the entered number is 116)
 	// 3- Call GetPointClicked() function
 
-	//Done, not 100% sure
+	//Done
 	int received = pIn->GetInteger(pOut);
-	pOut->PrintMessage("You Entered: 116");
+	pOut->PrintMessage("You Entered: " +to_string(received));
 	pIn->GetPointClicked(x, y);
 	///////////////////////////
 
@@ -309,7 +309,7 @@ int main()
 	for (int i = 0; i < 6; i++)
 	{
 		pIn->GetCellClicked();
-		pOut->PrintMessage("(GetCellClicked) Test, vCell =, hCell= ");
+		pOut->PrintMessage("(GetCellClicked) Test, vCell = " + to_string((pIn->GetCellClicked()).VCell()) + ", hCell = " + to_string((pIn->GetCellClicked()).HCell()));
 	}
 
 	pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");

@@ -708,8 +708,6 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 
 	// TODO: Draw the workshop image in the cell :: done
 	
-
-
 }
 
 void Output::DrawDangerZone(const CellPosition& cellPos) const
