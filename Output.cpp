@@ -640,6 +640,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 			int flagPoleStartY = cellStartY + UI.CellHeight / 4;
 			int FlagPoleCellEndX = cellStartX + UI.CellWidth / 2;;
 			int FlagPoleCellEndY = cellStartY + 3 * UI.CellHeight / 4;
+			pWind->SetPen(UI.FlagColor, UI.FlagPoleWidth);
 			pWind->DrawLine(flagPoleStartX, flagPoleStartY, FlagPoleCellEndX, FlagPoleCellEndY);
 			//wedith rb3
 			// hught rob3
