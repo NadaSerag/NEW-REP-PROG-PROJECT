@@ -444,7 +444,7 @@ int main()
 				break;
 
 			case ADD_WATERPIT:
-
+				
 				pOut->PrintMessage("Action: ADD_WATERPIT , Click anywhere");
 				break;
 
