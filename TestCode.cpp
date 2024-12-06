@@ -183,8 +183,8 @@ int main()
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
 	pOut->DrawFlag(flag_1);
-	//pOut->DrawFlag(flag_60);
-	////pOut->DrawFlag(flag_99);
+	/*pOut->DrawFlag(flag_60);
+	pOut->DrawFlag(flag_99);*/
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
@@ -504,7 +504,7 @@ int main()
 
 			case CUT_GAME_OBJECT:
 
-				pOut->PrintMessage("Action: CUT , Click anywhere");
+				pOut->PrintMessage("Action: CUT_GAME_OBJECT , Click anywhere");
 				break;
 
 			case PASTE_GAME_OBJECT:
