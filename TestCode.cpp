@@ -177,14 +177,14 @@ int main()
 	pOut->PrintMessage("2.4- Drawing (Flags) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition flag_1(9);
-	/*CellPosition flag_60(-1,4);
-	CellPosition flag_99(99);*/
+	CellPosition flag_1(1);
+	CellPosition flag_60(60);
+	CellPosition flag_99(99);
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
 	pOut->DrawFlag(flag_1);
-	/*pOut->DrawFlag(flag_60);
-	pOut->DrawFlag(flag_99);*/
+	pOut->DrawFlag(flag_60);
+	pOut->DrawFlag(flag_99);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
@@ -198,8 +198,8 @@ int main()
 
 	CellPosition belt_start_1(4,0);
 	CellPosition belt_end_1(4,5);
-	CellPosition belt_start_2(12);//30
-	CellPosition belt_end_2(45);//00
+	CellPosition belt_start_2(3,0);
+	CellPosition belt_end_2(0,0);
 	CellPosition belt_start_3(0,9);
 	CellPosition belt_end_3(2,9);
 	CellPosition belt_end_4(2,10);
