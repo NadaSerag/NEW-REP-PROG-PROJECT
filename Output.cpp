@@ -701,17 +701,16 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 {
 	///TODO: Complete the implementation of the following function
 	
-		CellPosition cellposi = cellPos;
+	if (cellPos.GetCellNum() != 1) {
 		int x1 = GetCellStartX(cellPos);//uper left x
 		int y1 = GetCellStartY(cellPos);//uper left y
-		cellposi.AddCellNum(1, RIGHT);
-		cellposi.AddCellNum(1, DOWN);
-		int x2 = GetCellStartX(cellposi);//lower right x
-		int y2 = GetCellStartY(cellposi);//lower right y
+
+		int x2 = x1 + UI.CellWidth;//lower right x
+		int y2 = y1 + UI.CellHeight;//lower right y
 		pWind->SetBrush(DARKSLATEBLUE);
 		pWind->DrawRectangle(x1, y1, x2, y2, FILLED, 0, 0);
-	
-	
+
+	}
 
 }
 
