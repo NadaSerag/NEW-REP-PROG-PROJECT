@@ -605,18 +605,18 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 
 			// TODO: Draw the triangle at the center of the belt line pointing to the direction of the belt
 
-			int x = (beltFromCellX + beltToCellX) / 2;
-			int y = beltFromCellY;
-			int triangleWidth = UI.CellWidth / 4;
-			int triangleHeight = UI.CellHeight / 4;
-			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
-		}
-		else
-		{
-			int x = beltFromCellX;
-			//int y
-		}
+		int x = (beltFromCellX + beltToCellX) / 2;
+		int y = beltFromCellY;
+		int triangleWidth = UI.CellWidth / 4;
+		int triangleHeight = UI.CellHeight / 4;
+		DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
 	}
+	else
+	{
+		int x = beltFromCellX;
+		int y
+	}
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
