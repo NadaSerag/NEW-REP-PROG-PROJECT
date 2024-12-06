@@ -573,7 +573,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCellPos) const
 {
 	// TODO: Validate the fromCell and toCell (Must be Horizontal or Vertical, and we can't have the first cell as a starting cell for a belt)
-	if (fromCellPos.VCell() != toCellPos.VCell() && fromCellPos.HCell() != toCellPos.HCell() && fromCellPos.GetCellNumFromPosition(fromCellPos) == 1)
+	if (fromCellPos.VCell() != toCellPos.VCell() && fromCellPos.HCell() != toCellPos.HCell())
 	{
 
 		return;
