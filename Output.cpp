@@ -532,7 +532,7 @@ void Output::DrawCell(const CellPosition & cellPos, color cellColor) const
 void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playerColor, Direction direction) const //DONE
 {
 	// TODO: Validate the cell position and the playerNum, if not valid return::done
-	if (playerNum >= 0 && playerNum < 2 && !cellPos.IsValidCell())
+	if (playerNum >= 0 && playerNum < 2 && cellPos.IsValidCell())
 	{
 		// Get the X & Y coordinates of the start point of the cell (its upper left corner)
 		int cellStartX = GetCellStartX(cellPos);
