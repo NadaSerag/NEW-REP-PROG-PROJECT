@@ -589,21 +589,21 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	int toCellStartY = GetCellStartY(toCellPos);
 
 	if (fromCellPos.VCell() == toCellPos.VCell()) {
-	int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
-	int beltToCellX = toCellStartX + UI.BeltXOffset;
-	int beltFromCellY = fromCellStartY + UI.BeltYOffset;
-	int beltToCellY = toCellStartY + UI.BeltYOffset;
+		int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
+		int beltToCellX = toCellStartX + UI.BeltXOffset;
+		int beltFromCellY = fromCellStartY + UI.BeltYOffset;
+		int beltToCellY = toCellStartY + UI.BeltYOffset;
 
-	if (fromCellPos.GetCellNum() < toCellPos.GetCellNum()) {
-		// TODO: Draw the belt line and the triangle at the center of the line pointing to the direction of the belt
+		if (fromCellPos.GetCellNum() < toCellPos.GetCellNum()) {
+			// TODO: Draw the belt line and the triangle at the center of the line pointing to the direction of the belt
 
-		// TODO: 1. Set pen color and width using the appropriate parameters of UI_Info object (UI)
-		pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
-		pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
-		//        2. Draw the line of the belt using the appropriate coordinates
+			// TODO: 1. Set pen color and width using the appropriate parameters of UI_Info object (UI)
+			pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
+			pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
+			//        2. Draw the line of the belt using the appropriate coordinates
 
 
-		// TODO: Draw the triangle at the center of the belt line pointing to the direction of the belt
+			// TODO: Draw the triangle at the center of the belt line pointing to the direction of the belt
 
 		int x = (beltFromCellX + beltToCellX) / 2;
 		int y = beltFromCellY;
@@ -614,7 +614,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 	else
 	{
 		int x = beltFromCellX;
-		int y;
+		int y
 	}
 
 }
@@ -696,7 +696,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 	// TODO: Validate the cell position ::  done
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos,"Workshop", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos,"images\\Workshop .jpg", UI.CellWidth, UI.CellHeight);
 	}
 
 	// TODO: Draw the workshop image in the cell
@@ -725,7 +725,7 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 	///TODO: Complete the implementation of the following function
 	
 	if (cellPos.GetCellNum() != 1) {
-		int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
+		//int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
 		
 		 DrawCell(cellPos , DARKSLATEBLUE);
 	}
