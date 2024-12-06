@@ -453,7 +453,7 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 void Output::PrintPlayersInfo(string info)
 {
 	///TODO: Clear what was written on the toolbar
-	ClearToolBar();
+	CreatePlayModeToolBar();
 	// One of the correct ways to implement the above TODO is to call CreatePlayModeToolBar(); 
 	// to clear what was written in the player info (there are other ways too � You are free to use any)
 
@@ -601,12 +601,12 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 			int triangleHeight = UI.CellHeight / 4;
 			DrawTriangle(x, y, triangleHeight, triangleWidth, RIGHT, UI.BeltColor);
 		}
-		else if (fromCellPos.VCell() == toCellPos.VCell())
+		else if (fromCellPos.HCell() == toCellPos.HCell())
 		{
-			int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
+			int beltFromCellX = fromCellStartX +UI.BeltXOffset;
 			int beltToCellX = toCellStartX + UI.BeltXOffset;
 			int beltFromCellY = fromCellStartY + UI.BeltYOffset;
-			int beltToCellY = toCellStartY + UI.BeltYOffset;
+			int beltToCellY = toCellStartY +(UI.CellHeight/2)- UI.BeltYOffset;
 			pWind->SetPen(UI.BeltColor, UI.BeltLineWidth);
 			pWind->DrawLine(beltFromCellX, beltFromCellY, beltToCellX, beltToCellY);
 			int x = beltFromCellX;
@@ -677,18 +677,21 @@ void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 	}
 	else
 	{
-		DrawImageInCell(cellPos, " images\\rotating gear.jpg", Wedith, Highet);
+		DrawImageInCell(cellPos, "images\\rotating gear.jpg", Wedith, Highet);
 	}
 }
 
 void Output::DrawAntenna(const CellPosition& cellPos) const
 {
 	// TODO: Validate the cell position :: done
+	
 
+	int Highet = UI.CellHeight / 2;
+	int Wedith = UI.CellWidth / 2;
 	// TODO: Draw the antenna image in the cell :: donee
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos, "images\\antenna.jpg", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos, "images\\antenna.jpg",Wedith, Highet);
 	}
 
 	
@@ -698,9 +701,11 @@ void Output::DrawAntenna(const CellPosition& cellPos) const
 void Output::DrawWorkshop(const CellPosition& cellPos) const
 {
 	// TODO: Validate the cell position ::  done
+	int Highet = UI.CellHeight / 2;
+	int Wedith = UI.CellWidth / 2;
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell(cellPos,"images\\Workshop .jpg", UI.CellWidth, UI.CellHeight);
+		DrawImageInCell(cellPos,"images\\Workshop.jpg", Wedith, Highet);
 	}
 
 	// TODO: Draw the workshop image in the cell :: done
@@ -712,7 +717,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 void Output::DrawDangerZone(const CellPosition& cellPos) const
 {
     ///TODO: Complete the implementation of the following function :: donee
-	 if(cellPos.GetCellNum() != 1&& cellPos.GetCellNum()<=55) {
+	 if(cellPos.IsValidCell()) {
 		
 		DrawCell(cellPos , RED);
 	}

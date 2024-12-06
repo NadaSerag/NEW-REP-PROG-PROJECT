@@ -112,7 +112,7 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition cell_20(3,8);	// cell num 20
-	CellPosition cell_60(60);	// cell num 60
+	CellPosition cell_60(1,4);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)
 	pOut->DrawDangerZone(cell_20);
@@ -128,8 +128,8 @@ int main()
 	pOut->PrintMessage("2.3- Drawing (Players) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition player_1(1);
-	CellPosition player_2(2);
+	CellPosition player_1(4,0);
+	CellPosition player_2(4,1);
 	CellPosition player_15(2, 18);
 	CellPosition player_99(2, 5);
 
@@ -179,13 +179,13 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition flag_1(9);
-	CellPosition flag_60(60);
-	CellPosition flag_99(99);
+	/*CellPosition flag_60(60);*/
+	/*CellPosition flag_99(99);*/
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
 	pOut->DrawFlag(flag_1);
-	pOut->DrawFlag(flag_60);
-	pOut->DrawFlag(flag_99);
+	/*pOut->DrawFlag(flag_60);*/
+	//pOut->DrawFlag(flag_99);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
@@ -232,8 +232,8 @@ int main()
 	pOut->PrintMessage("2.6- Drawing (Rotating Gears) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_13(13);
-	CellPosition cell_19(19);
+	CellPosition cell_13(3,1);
+	CellPosition cell_19(3,7);
 
 	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19)
 	//        1. At cell_13 with rotation left (anticlockwise)
@@ -249,7 +249,7 @@ int main()
 	pOut->PrintMessage("2.7- Drawing (Antenna) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_25(25);
+	CellPosition cell_25(2,2);
 	
 	// TODO: Draw Antenna in cell position (cell_25)
 	pOut->DrawAntenna(cell_25);
@@ -262,7 +262,7 @@ int main()
 	pOut->PrintMessage("2.8- Drawing (Workshop) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_30(30);
+	CellPosition cell_30(2,7);
 
 	// TODO: Draw Workshop in cell position (cell_30)
 	pOut->DrawWorkshop(cell_30);
