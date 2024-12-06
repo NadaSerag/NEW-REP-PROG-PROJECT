@@ -130,8 +130,9 @@ int main()
 
 	CellPosition player_1(1);//cell 1
 	CellPosition player_2(2);//cell 2
-	CellPosition player_15(15); //invalid cell testcase
-	CellPosition player_99(99); //cell 28
+	CellPosition player_15(2,18); //invalid cell testcase
+	CellPosition player_99(2,5); //cell 28
+
 
 
 	///TODO: Call Function DrawPlayer of Class Ouput Multiple Times :: DONE:WORKS (players drawn in the right cells)
