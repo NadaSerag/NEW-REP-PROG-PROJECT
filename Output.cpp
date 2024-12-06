@@ -622,7 +622,7 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-	void Output::DrawFlag(const CellPosition& cellPos) const
+	void Output::DrawFlag(const CellPosition & cellPos) const
 	{
 		// TODO: Validate the cell position
 		if (cellPos.GetCellNum() >= 1 || cellPos.GetCellNum() <= 55)
