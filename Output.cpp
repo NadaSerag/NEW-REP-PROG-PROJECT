@@ -208,11 +208,9 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 
 void Output::DrawImageInCell(const CellPosition& cellPos, string image, int width, int height) const
 {
-<<<<<<< HEAD
-	// TODO: Validate the cell position:: done
-=======
-	// TODO: Validate the cell position 
->>>>>>> 3f087fef612475e87d70186dde1f747321fd1584
+
+	// TODO: Validate the cell position:: donee
+
 	if (!cellPos.IsValidCell())
 		return;
 
@@ -698,7 +696,7 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 	// TODO: Validate the cell position ::  done
 	if (cellPos.IsValidCell())
 	{
-		DrawImageInCell
+		DrawImageInCell(cellPos,"Workshop", UI.CellWidth, UI.CellHeight);
 	}
 
 	// TODO: Draw the workshop image in the cell
@@ -727,16 +725,9 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 	///TODO: Complete the implementation of the following function
 	
 	if (cellPos.GetCellNum() != 1) {
-<<<<<<< HEAD
-		int x1 = GetCellStartX(cellPos);//uper left x
-		int y1 = GetCellStartY(cellPos);//uper left y
-
-		int x2 = x1 + UI.CellWidth;//lower right x
-		int y2 = y1 + UI.CellHeight;//lower right y
-=======
->>>>>>> 3f087fef612475e87d70186dde1f747321fd1584
+		int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
 		
-		DrawCell(cellPos, DARKSLATEBLUE);
+		 DrawCell(cellPos , DARKSLATEBLUE);
 	}
 }
 
