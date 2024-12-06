@@ -198,8 +198,8 @@ int main()
 
 	CellPosition belt_start_1(4,0);
 	CellPosition belt_end_1(4,5);
-	CellPosition belt_start_2(3,0);
-	CellPosition belt_end_2(0,0);
+	CellPosition belt_start_2(12);//30
+	CellPosition belt_end_2(45);//00
 	CellPosition belt_start_3(0,9);
 	CellPosition belt_end_3(2,9);
 	CellPosition belt_end_4(2,10);
