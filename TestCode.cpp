@@ -371,12 +371,13 @@ int main()
 	//			--> it uses the function : GetCellPositionFromNum () inside it
 	// 4- Print the Cell vCell and hCell on the status bar
 	// 5- Repeat the above steps Five TIMES
-	/*int cellnumm;
-	cin >> cellnumm;
-	CellPosition(cellnumm);*/
-
-	CellPosition(cellnumm);
-
+	int cellnum =pIn->GetInteger(pOut);
+	CellPosition*cp=& CellPosition(cellnum);
+	int h =cp->HCell();
+	int v = cp->VCell();
+	
+	pOut->ClearStatusBar();
+	
 
 	pOut->PrintMessage("FINISHED - (GetCellPositionFromNum) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -443,7 +444,7 @@ int main()
 				break;
 
 			case ADD_WATERPIT:
-
+				
 				pOut->PrintMessage("Action: ADD_WATERPIT , Click anywhere");
 				break;
 
