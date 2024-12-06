@@ -115,7 +115,7 @@ Input* Output::CreateInput() const
 
 int Output::GetCellStartX(const CellPosition & cellPos) const
 {
-	///TODO: implement the following function as described in Output.h file
+	///TODO: implement the following function as described in Output.h file // already done 
 	
 	if (cellPos.IsValidCell())
 	{
@@ -132,7 +132,7 @@ int Output::GetCellStartX(const CellPosition & cellPos) const
 
 int Output::GetCellStartY(const CellPosition & cellPos) const
 {
-	///TODO: implement the following function as described in Output.h file
+	///TODO: implement the following function as described in Output.h file // already done 
 	
 	if (cellPos.IsValidCell())
 	{
@@ -343,6 +343,18 @@ void Output::CreateCommandsBar(Command savedCommands[], int savedCommandsCount, 
 	string CommandItemImages[COMMANDS_COUNT];
 	CommandItemImages[NO_COMMAND] = "images\\CommandSlot-grey.jpg";
 	CommandItemImages[MOVE_FORWARD_ONE_STEP] = "images\\MoveForwardCard.jpg";
+	
+
+	CommandItemImages[MOVE_FORWARD_ONE_STEP] = "images\\MoveForwardCard.jpg";
+	CommandItemImages[MOVE_BACKWARD_ONE_STEP] = "images\\move backward one step.jpg";
+	CommandItemImages[MOVE_FORWARD_TWO_STEPS] = "images\\move forward two steps.jpg";
+	CommandItemImages[MOVE_BACKWARD_TWO_STEPS] = "images\\move backward two steps.jpg";
+	CommandItemImages[MOVE_FORWARD_THREE_STEPS] = "images\\move forward three steps.jpg";
+	CommandItemImages[MOVE_BACKWARD_THREE_STEPS] = "images\\move backward three steps.jpg";
+	CommandItemImages[ROTATE_CLOCKWISE] = "images\\rotate clockwise.jpg";
+	CommandItemImages[ROTATE_COUNTERCLOCKWISE] = "images\\rotate anticlockwise.jpg";
+	
+
 	// TODO: Prepare images for more items with .jpg extensions and add them to the list 
 
 	DrawSavedCommands(savedCommands, savedCommandsCount, CommandItemImages);
