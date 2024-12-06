@@ -387,13 +387,13 @@ int main()
 
 	CellPosition cellpos_1(1);
 
-	///TODO:
-	// 1- Ask user to enter an integer and read it using GetInteger():::done
-	// 2- Call SetVCell() of cellpos_1 with that integer:::done
-	// 3- Print GetVCell() of cellpos_1 as follows: "Now the vCell = 5" (assuming the entered integer is 5):::done
-	// 4- Call GetPointClicked():::done
-	// 5- Repeat the above steps FIVE TIMES:::done
-	// 6- Repeat all the above steps to test SetHCell() function instead with the needed modifications:::done
+	TODO:
+	 1- Ask user to enter an integer and read it using GetInteger():::done
+	 2- Call SetVCell() of cellpos_1 with that integer:::done
+	 3- Print GetVCell() of cellpos_1 as follows: "Now the vCell = 5" (assuming the entered integer is 5):::done
+	 4- Call GetPointClicked():::done
+	 5- Repeat the above steps FIVE TIMES:::done
+	 6- Repeat all the above steps to test SetHCell() function instead with the needed modifications:::done
 	int V_int = 0;
 	for (int i = 0; i < 5; i++) 
 	{

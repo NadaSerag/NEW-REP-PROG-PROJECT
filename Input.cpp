@@ -65,7 +65,7 @@ ActionType Input::GetUserAction() const
 	GetPointClicked(x, y);
 
 	//  ============ GUI in the Design mode ============
-	if (UI.InterfaceMode == MODE_DESIGN)
+	if (UI.InterfaceMode == MODE_PLAY)
 	{
 		// [1] If user clicks on the Toolbar
 		if (y >= 0 && y < UI.ToolBarHeight)
