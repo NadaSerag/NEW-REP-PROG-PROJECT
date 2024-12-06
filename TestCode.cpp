@@ -263,9 +263,12 @@ int main()
 	// 2- Print it in the status bar in this format:   You Entered: 116
 	//    (assuming the entered number is 116)
 	// 3- Call GetPointClicked() function
+
+	//Done, not 100% sure
 	int received = pIn->GetInteger(pOut);
 	pOut->PrintMessage("You Entered: 116");
-	/*cout << received;*/
+	pIn->GetPointClicked(x, y);
+	///////////////////////////
 
 	pOut->PrintMessage("FINISHED - (GetInteger) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -277,10 +280,16 @@ int main()
 
 
 	///TODO: Add code here to 
-	// 1- Call function GetCellClicked
-	// 2- Print on the status bar the vCell and hCell of the clicked cell
-	// 3- Repeat Step 1 and 2 five times
+	// 1- Call function GetCellClicked :: done
+	// 2- Print on the status bar the vCell and hCell of the clicked cell :: done
+	// 3- Repeat Step 1 and 2 five  :: done
 
+	
+	for (int i = 0; i < 6; i++)
+	{
+		pIn->GetCellClicked();
+		pOut->PrintMessage("(GetCellClicked) Test, vCell =, hCell= ");
+	}
 
 	pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -293,12 +302,13 @@ int main()
 
 
 	///TODO: Add code here to 
-	// 1- Read a string from the user on the status bar
-	// 2- After reading the string clear the status bar
-	// 3- print on the status bar "You Entered" then print the string
+	// 1- Read a string from the user on the status bar :: does reading mean only calling?
+	// 2- After reading the string clear the status bar :: done
+	// 3- print on the status bar "You Entered" then print the string :: done
 	// NOTE: GetString() is already implemented. It is just required from you to call it
-
-
+	pIn->GetSrting(pOut);
+	pOut->ClearStatusBar();
+	pOut->PrintMessage("You Entered (GetString)");
 
 	pOut->PrintMessage("FINISHED - (GetSrting) Test, Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -378,7 +388,7 @@ int main()
 
 	///TODO:  
 	// You must add a case for EACH action (both Design mode and Game mode actions)
-	// Add cases for the missing actions below
+	// Add cases for the missing actions below :: DONEE 
 	do
 	{
 		ActType = pIn->GetUserAction();
@@ -401,17 +411,82 @@ int main()
 
 				///TODO:  Call Function (PrintPlayersInfo) of Class Output with a string similar to 
 				//        the one given in the screenshot of project document 
+				pOut->PrintPlayersInfo("P1(2, Right, 10), P2(2, Up, 10) | Curr = P1");
 
 				break;
 
+			case ADD_ANTENNA:
 
-				///TODO:  ADD Cases similarly for ALL the remaining actions of DESIGN Mode
+				pOut->PrintMessage("Action: ADD_ANTENNA , Click anywhere");
+				break;
+
+			case ADD_BELT:
+
+				pOut->PrintMessage("Action: ADD_BELT , Click anywhere");
+				break;
+
+			case ADD_WATERPIT:
+
+				pOut->PrintMessage("Action: ADD_WATERPIT , Click anywhere");
+				break;
+
+			case ADD_DANGERZONE:
+
+				pOut->PrintMessage("Action: ADD_DANGERZONE , Click anywhere");
+				break;
+
+			case ADD_WORKSHOP:
+
+				pOut->PrintMessage("Action: ADD_WORKSHOP , Click anywhere");
+				break;
+
+			case ADD_ROTATING_GEAR_ANTI:
+
+				pOut->PrintMessage("Action: ADD_ROTATING_GEAR_ANTI , Click anywhere");
+				break;
+
+			case ADD_ROTATING_GEAR:
+
+				pOut->PrintMessage("Action: ADD_ROTATING_GEAR , Click anywhere");
+				break;
+
+			case COPY_GAME_OBJECT:
+
+				pOut->PrintMessage("Action: COPY_GAME_OBJECT , Click anywhere");
+				break;
+
+			case CUT_GAME_OBJECT:
+
+				pOut->PrintMessage("Action: CUT , Click anywhere");
+				break;
+
+			case PASTE_GAME_OBJECT:
+
+				pOut->PrintMessage("Action: PASTE_GAME_OBJECT , Click anywhere");
+				break;
+
+			case DELETE_GAME_OBJECT:
+
+				pOut->PrintMessage("Action: DELETE_GAME_OBJECT , Click anywhere");
+				break;
+
+			case SAVE_GRID:
+
+				pOut->PrintMessage("Action: SAVE_GRID , Click anywhere");
+				break;
+
+			case LOAD_GRID:
+
+				pOut->PrintMessage("Action: LOAD_GRID , Click anywhere");
+				break;
+
+				///TODO:  ADD Cases similarly for ALL the remaining actions of DESIGN Mode :: done
 
 			case EXECUTE_COMMANDS:
-				pOut->PrintMessage("Action: EXECUTE_COMMAND , Click anywhere");
+				pOut->PrintMessage("Action: EXECUTE_COMMAND, Click anywhere");
 				break;
 			case SELECT_COMMAND:
-				pOut->PrintMessage("Action: SELECT_COMMAND , Select a command");
+				pOut->PrintMessage("Action: SELECT_COMMAND, Select a command");
 				clickedCommandItemIndex = pIn->GetSelectedCommandIndex();
 				pOut->PrintMessage("Action: SELECT_COMMAND " + to_string(clickedCommandItemIndex) + " , Click anywhere");
 				break;
@@ -429,7 +504,22 @@ int main()
 				pOut->CreateDesignModeToolBar();
 				break;
 
-				///TODO:  ADD Cases similarly for ALL the remaining actions of PLAY Mode
+			case REBOOT_AND_REPAIR:
+
+				pOut->PrintMessage("Action: REBOOT_AND_REPAIR , Click anywhere");
+				break;
+
+			case USE_CONSUMABLE:
+
+				pOut->PrintMessage("Action: USE_CONSUMABLE , Click anywhere");
+				break;
+
+			case NEW_GAME:
+
+				pOut->PrintMessage("Action: NEW_GAME , Click anywhere");
+				pOut->ClearCommandsBar();
+				break;
+				///TODO:  ADD Cases similarly for ALL the remaining actions of PLAY Mode :: done
 
 		}
 	}while(ActType != EXIT);
