@@ -111,23 +111,36 @@ CellPosition CellPosition::GetCellPositionFromNum(int cellNum)
 	CellPosition position;
 
 	/// TODO: Implement this function as described in the .h file:::done
-	int index_h;
-	int index_v;
+	
 	if ( cellNum >=1 &&cellNum <= 55) {
-		 
 		int index_h;
 		int index_v;
-		
-		if ((cellNum % 10) != 0)
-		{
-			index_h = (cellNum % 10) - 1;
+		if (cellNum >= 1 && cellNum <= 11) {
+			index_h = cellNum - 1;
+			index_v = 4;
 		}
-		else
-		{
-			index_h = 10;
+		else if (cellNum >= 12 && cellNum <= 22) {
+			index_h = cellNum - 12;
+			index_v = 3;
+
+		}
+		else if (cellNum >= 23 && cellNum <= 33) {
+			index_h = cellNum - 23;
+			index_v = 2;
+
+		}
+		else if (cellNum >= 34 && cellNum <= 44) {
+			index_h = cellNum - 34;
+			index_v = 1;
+
+		}
+		else if (cellNum >= 45 && cellNum <= 55) {
+			index_h = cellNum - 45;
+			index_v = 0;
+
 		}
 
-		index_v = 5 - (cellNum / 10);
+		
 		position.SetHCell(index_h);
 		position.SetVCell(index_v);
 		return position;
