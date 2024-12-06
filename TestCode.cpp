@@ -94,9 +94,9 @@ int main()
 	pOut->PrintMessage("2.1- Drawing (Water Pits Cells) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_10(10);	// cell num 10
-	CellPosition cell_53(53);	// cell num 53
-	CellPosition cell_1(1);		// cell num 1
+	CellPosition cell_10(4,9);	// cell num 10
+	CellPosition cell_53(0,8);	// cell num 53
+	CellPosition cell_1(4,0);		// cell num 1
 
 	// TODO: Draw Water Pits in cell_10 and cell_53 and cell_1 (Invalid)
 	pOut->DrawWaterPit(cell_10);
@@ -111,7 +111,7 @@ int main()
 	pOut->PrintMessage("2.2- Drawing (DangerZone Cells) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_20(20);	// cell num 20
+	CellPosition cell_20(3,8);	// cell num 20
 	CellPosition cell_60(60);	// cell num 60
 
 	// TODO: Draw DangerZone in cell_20, [cell_60 and cell_1] (Invalid)

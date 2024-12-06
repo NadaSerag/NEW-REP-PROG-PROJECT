@@ -705,6 +705,8 @@ void Output::DrawWorkshop(const CellPosition& cellPos) const
 
 	// TODO: Draw the workshop image in the cell :: done
 	
+
+
 }
 
 void Output::DrawDangerZone(const CellPosition& cellPos) const
@@ -712,7 +714,7 @@ void Output::DrawDangerZone(const CellPosition& cellPos) const
     ///TODO: Complete the implementation of the following function :: donee
 	 if(cellPos.GetCellNum() != 1&& cellPos.GetCellNum()<=55) {
 		
-		DrawCell(cellPos, RED);
+		DrawCell(cellPos , RED);
 	}
 
 }
@@ -724,7 +726,7 @@ void Output::DrawWaterPit(const CellPosition& cellPos) const
 	if (cellPos.GetCellNum() != 1 && cellPos.GetCellNum() <= 55) {
 		//int y =GetCellStartY(cellPos) + UI.ToolBarHeight;
 		
-		 DrawCell(cellPos , DARKSLATEBLUE);
+		 DrawCell(cellPos, DARKSLATEBLUE);
 	}
 }
 
