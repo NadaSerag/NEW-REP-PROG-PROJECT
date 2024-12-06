@@ -179,13 +179,13 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
 	CellPosition flag_1(9);
-	CellPosition flag_60(60);
-	CellPosition flag_99(99);
+	/*CellPosition flag_60(60);*/
+	/*CellPosition flag_99(99);*/
 
 	// TODO: Draw Flags in cell positions (flag_1, flag_60, flag_99)
 	pOut->DrawFlag(flag_1);
-	pOut->DrawFlag(flag_60);
-	pOut->DrawFlag(flag_99);
+	/*pOut->DrawFlag(flag_60);*/
+	//pOut->DrawFlag(flag_99);
 
 
 	pOut->PrintMessage("FINISHED - Drawing (Flags) Test,  Click to continue");
@@ -232,8 +232,8 @@ int main()
 	pOut->PrintMessage("2.6- Drawing (Rotating Gears) Test,  Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	CellPosition cell_13(13);
-	CellPosition cell_19(19);
+	CellPosition cell_13(3,1);
+	CellPosition cell_19(3,7);
 
 	// TODO: Draw Rotating Gears in cell positions (cell_13, cell_19)
 	//        1. At cell_13 with rotation left (anticlockwise)
