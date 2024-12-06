@@ -477,19 +477,20 @@ int main()
 	CellPosition cellposofup(cellnum);
 	cellposofup.AddCellNum(addednum, UP);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofup.VCell()) + "new Hcell= " + to_string(cellposofup.HCell()));
-
+	pIn->GetPointClicked(x, y);
 	CellPosition cellposofdown(cellnum);
 	cellposofdown.AddCellNum(addednum, DOWN);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofdown.VCell()) + "new Hcell= " + to_string(cellposofdown.HCell()));
-
+	pIn->GetPointClicked(x, y);
 	CellPosition cellposofr(cellnum);
 	cellposofr.AddCellNum(addednum, RIGHT);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofr.VCell()) + "new Hcell= " + to_string(cellposofr.HCell()));
-
+	pIn->GetPointClicked(x, y);
 
 	CellPosition cellposofl(cellnum);
 	cellposofl.AddCellNum(addednum, LEFT);
 	pOut->PrintMessage("new Vcell= " + to_string(cellposofl.VCell()) + "new Hcell= " + to_string(cellposofl.HCell()));
+	pIn->GetPointClicked(x, y);
 
 	pOut->PrintMessage("FINISHED - (AddCellNum) Test, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
