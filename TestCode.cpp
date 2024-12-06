@@ -438,7 +438,7 @@ int main()
 		 vcellin = pIn->GetInteger(pOut);
 		 pOut->PrintMessage("Enter the hCell: ");
 		 hcellin = pIn->GetInteger(pOut);
-		CellPosition cellposition(hcellin, vcellin);
+		CellPosition cellposition(vcellin, hcellin);
 		 numprint = cellposition.GetCellNum();
 		
 		pOut->PrintMessage("CellNum = " + to_string(numprint));
