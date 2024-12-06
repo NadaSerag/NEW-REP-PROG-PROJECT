@@ -158,7 +158,7 @@ void Output::ClearToolBar() const
 
 void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangleHeight, int triangleWidth, Direction direction, color triangleColor, drawstyle style, int penWidth) const
 {
-	int x1=0, y1=0, x2=0, y2=0, x3=0, y3 =0;
+	int x1, y1, x2, y2, x3, y3;
 
 	///TODO: Calculate the coordiantes of the 3 vertices of the triangle based on the passed parameters
 
@@ -179,32 +179,31 @@ void Output::DrawTriangle(int triangleCenterX, int triangleCenterY, int triangle
 		x2 = triangleCenterX + triangleWidth / 2;
 		y2 = triangleCenterY - triangleHeight / 2;
 		x3 = triangleCenterX;
-	    y3 = triangleCenterY + triangleHeight / 2;
+		y3 = triangleCenterY + triangleHeight / 2;
 	}
 	if (direction == LEFT)
 	{
 		x1 = triangleCenterX + triangleWidth / 2;
-		y1 = triangleCenterY + triangleHeight / 2;
+		y1 = triangleCenterY - triangleHeight / 2;
 		x2 = triangleCenterX + triangleWidth / 2;
-		y2 = triangleCenterY - triangleHeight / 2;
-		x3 = triangleCenterX- triangleWidth/2;
+		y2 = triangleCenterY + triangleHeight / 2;
+		x3 = triangleCenterX - triangleHeight / 2;
 		y3 = triangleCenterY;
 	}
 	if (direction == RIGHT)
 	{
-		x1 = triangleCenterX - triangleWidth / 2;
-		y1 = triangleCenterY - triangleHeight / 2;
-		x2 = triangleCenterX - triangleWidth / 2;
-		y2 = triangleCenterY +	 triangleHeight / 2;
-		x3 = triangleCenterX + triangleWidth / 2;
+		x1 = triangleCenterX - triangleHeight / 2;
+		y1 = triangleCenterY - triangleWidth / 2;
+		x2 = triangleCenterX - triangleHeight / 2;
+		y2 = triangleCenterY + triangleWidth / 2;
+		x3 = triangleCenterX + triangleHeight / 2;
 		y3 = triangleCenterY;
 	}
+	pWind->SetPen(triangleColor, penWidth);
 	pWind->SetBrush(triangleColor);
-	pWind->SetPen(WHITE, penWidth);
 	pWind->DrawTriangle(x1, y1, x2, y2, x3, y3, style);
-	
-}
 
+}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void Output::DrawImageInCell(const CellPosition& cellPos, string image, int width, int height) const
@@ -317,16 +316,22 @@ void Output::CreatePlayModeToolBar() const
 
 	// First prepare List of images for each menu item
 	// To control the order of these images in the menu, 
-	// reoder them in UI_Info.h ==> enum DESIGN_MODE_ITEMS
+	// reorder them in UI_Info.h ==> enum DESIGN_MODE_ITEMS
 	// ** MAKE SURE THAT THE IMAGES ARE .JPG FILES **
 	string MenuItemImages[PLAY_ITM_COUNT];
 	MenuItemImages[ITM_SWITCH_TO_DESIGN_MODE] = "images\\Menu_SwitchToGrid.jpg";
 
-	///TODO: Change the path of the images as needed
+	///TODO: Change the path of the images as needed // done
 	MenuItemImages[ITM_EXECUTE_COMMANDS] = "images\\Menu_Dice.jpg";
 	MenuItemImages[ITM_SELECT_COMMAND] = "images\\Menu_Dice.jpg";
 
-	///TODO: Prepare images for each menu item and add it to the list
+	
+	MenuItemImages[ITM_REBOOT_AND_REPAIR] = "images\\reboot and repair.jpg";
+	MenuItemImages[ITM_USE_CONSUMABLE] = "images\\consumable.jpg";
+	MenuItemImages[ITM_NEW_GAME] = "images\\new game.jpg";
+	
+
+	///TODO: Prepare images for each menu item and add it to the list // done (didn't change order)
 
 
 
@@ -355,7 +360,7 @@ void Output::CreateCommandsBar(Command savedCommands[], int savedCommandsCount, 
 	CommandItemImages[ROTATE_COUNTERCLOCKWISE] = "images\\rotate anticlockwise.jpg";
 	
 
-	// TODO: Prepare images for more items with .jpg extensions and add them to the list 
+	// TODO: Prepare images for more items with .jpg extensions and add them to the list // done
 
 	DrawSavedCommands(savedCommands, savedCommandsCount, CommandItemImages);
 	DrawAvailableCommands(availableCommands, availableCommandsCount, CommandItemImages);
@@ -627,47 +632,63 @@ void Output::DrawPlayer(const CellPosition & cellPos, int playerNum, color playe
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-void Output::DrawFlag(const CellPosition& cellPos) const
-{
-	// TODO: Validate the cell position
+	void Output::DrawFlag(const CellPosition& cellPos) const
+	{
+		// TODO: Validate the cell position
+		if (cellPos.GetCellNum() >= 1 || cellPos.GetCellNum() <= 55)
+		{
 
-	// Get the X and Y coordinates of the start point of the cell (its upper left corner)
-	int cellStartX = GetCellStartX(cellPos);
-	int cellStartY = GetCellStartY(cellPos);
+			// Get the X and Y coordinates of the start point of the cell (its upper left corner)
+			int cellStartX = GetCellStartX(cellPos);
+			int cellStartY = GetCellStartY(cellPos);
 
-		//endx=endx
-	//endyy+hight
+			// TODO: Draw the flag as a line with a triangle connected to it directed to right
 
-	// TODO: Draw the flag as a line with a triangle connected to it directed to right
+			// TODO: 1. Draw the flag pole (the line)
+			int flagPoleStartX = cellStartX + UI.CellWidth / 2;
+			int flagPoleStartY = cellStartY + UI.CellHeight / 4;
+			int FlagPoleCellEndX = cellStartX + UI.CellWidth / 2;;
+			int FlagPoleCellEndY = cellStartY + 3 * UI.CellHeight / 4;
+			pWind->DrawLine(flagPoleStartX, flagPoleStartY, FlagPoleCellEndX, FlagPoleCellEndY);
+			//wedith rb3
+			// hught rob3
+			//centerx 5/8
+			//centrty 3/8 hight
 
-	// TODO: 1. Draw the flag pole (the line)
-	int flagPoleStartX = cellStartX + UI.CellWidth / 2;
-	int flagPoleStartY = cellStartY + UI.CellHeight / 4;
-	//int CellEndx = CellEndx;
-	int;
-	//wedith rb3
-	// hught rob3
-	//centerx 5/8
-	//centrty 3/8 hight
-	
 
-	// 		 2. Draw the flag (the triangle)
-	//pWind->SetPen();
-	//setpenclor w wedith
-	//pWind->DrawLine();
-	//line
-	//pWind->DrawTriangle()
-	//triangle
-	
-}
+			// 		 2. Draw the flag (the triangle)
+			int CenterX = cellStartX + (5 * (UI.CellWidth) / 8);
+			int CenterY = cellStartY + (3 * (UI.CellHeight) / 8);
+			int W = UI.CellHeight / 4;
+			int H = UI.CellWidth / 4;
+			DrawTriangle(CenterX, CenterY, H, W, RIGHT, UI.FlagColor);
 
+			//setpenclor w wedith
+
+			//line
+
+		//triangle
+		}
+	}
 void Output::DrawRotatingGear(const CellPosition& cellPos, bool clockwise) const
 {
 	// TODO: Validate the cell position
+	if (!cellPos.IsValidCell())
+	{
+		return;
+	}
+	int Highet = UI.CellHeight / 2;
+	int Wedith = UI.CellWidth / 2;
 
 	// TODO: Draw the rotating gear image in the cell based on the passed direction (clockwise or counter clockwise)
-
-
+	if (clockwise)
+	{
+		DrawImageInCell(cellPos, "images\\rotating gear2.jpg", Wedith, Highet);
+	}
+	else
+	{
+		DrawImageInCell(cellPos, " images\\rotating gear.jpg", Wedith, Highet);
+	}
 }
 
 void Output::DrawAntenna(const CellPosition& cellPos) const
