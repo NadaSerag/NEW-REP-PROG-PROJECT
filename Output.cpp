@@ -330,8 +330,8 @@ void Output::CreatePlayModeToolBar() const
 	MenuItemImages[ITM_SELECT_COMMAND] = "images\\select.jpg";
 
 	
-	MenuItemImages[ITM_REBOOT_AND_REPAIR] = "images\\reboot and repair.jpg";
-	MenuItemImages[ITM_USE_CONSUMABLE] = "images\\consumable.jpg";
+	MenuItemImages[ITM_REBOOT_AND_REPAIR] = "images\\repair.jpg";
+	MenuItemImages[ITM_USE_CONSUMABLE] = "images\\use consumable.jpg";
 	MenuItemImages[ITM_NEW_GAME] = "images\\new game.jpg";
 	
 

@@ -116,7 +116,7 @@ int main()
 	// TEST 2:	DONEE
 	//			Testing the Output Class
 	///////////////////////////////////////////////////////////////////////////////////
-
+	
 	pOut->PrintMessage("TEST2: Testing the [ Output ] class, Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
@@ -508,7 +508,7 @@ int main()
 
 	pOut->PrintMessage("FINISHED - (AddCellNum) Test, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-
+	
 
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 5: 
