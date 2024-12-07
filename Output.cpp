@@ -348,7 +348,7 @@ void Output::CreatePlayModeToolBar() const
 void Output::CreateCommandsBar(Command savedCommands[], int savedCommandsCount, Command availableCommands[], int availableCommandsCount) const
 {
     ClearCommandsBar();
-	//UI.InterfaceMode = MODE_PLAY;
+	UI.InterfaceMode = MODE_PLAY;
 	string CommandItemImages[COMMANDS_COUNT];
 	CommandItemImages[NO_COMMAND] = "images\\CommandSlot-grey.jpg";
 	CommandItemImages[MOVE_FORWARD_ONE_STEP] = "images\\MoveForwardCard.jpg";
