@@ -292,7 +292,7 @@ void Output::CreateDesignModeToolBar() const
 	MenuItemImages[ITM_PASTE_GAME_OBJECT] = "images\\paste game object.jpg";
 	MenuItemImages[ITM_DELETE_GAME_OBJECT] = "images\\delete.jpg";
 	MenuItemImages[ITM_SAVE_GRID] = "images\\save grid.jpg";
-	MenuItemImages[ITM_LOAD_GRID] = "images\\Menu_SwitchToGrid.jpg";
+	MenuItemImages[ITM_LOAD_GRID] = "images\\load.jpg";
 
 	
 	

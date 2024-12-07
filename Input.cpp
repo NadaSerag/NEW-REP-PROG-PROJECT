@@ -65,7 +65,7 @@ ActionType Input::GetUserAction() const
 	GetPointClicked(x, y);
 
 	//  ============ GUI in the Design mode ============
-	if (UI.InterfaceMode == MODE_PLAY)
+	if (UI.InterfaceMode == MODE_DESIGN)
 	{
 		// [1] If user clicks on the Toolbar
 		if (y >= 0 && y < UI.ToolBarHeight)
@@ -130,11 +130,13 @@ ActionType Input::GetUserAction() const
 
 			switch (clickedItemOrder)
 			{
+			case ITM_EXECUTE_COMMANDS: return EXECUTE_COMMANDS;
+			case ITM_SELECT_COMMAND: return SELECT_COMMAND;
 			case ITM_REBOOT_AND_REPAIR: return REBOOT_AND_REPAIR;
 			case ITM_USE_CONSUMABLE: return USE_CONSUMABLE;
 			case ITM_NEW_GAME: return NEW_GAME;
 			case ITM_SWITCH_TO_DESIGN_MODE: return TO_DESIGN_MODE;
-			case ITM_EXIT: return EXIT;
+			//case ITM_EXIT: return EXIT;
 			default: return EMPTY;
 				// just for now ==> This should be updated :: UPDATED
 
