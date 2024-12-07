@@ -305,10 +305,10 @@ int main()
 
 
 
-	///////////////////////////////////////////////////////////////////////////////////
-	// TEST 3: DONEE
-	//			Input Class - Part 1
-	///////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////
+	 //TEST 3: DONEE
+				//Input Class - Part 1
+	/////////////////////////////////////////////////////////////////////////////////
 
 	pOut->PrintMessage("TEST3: Now Time to test class [ Input ], Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -340,10 +340,10 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
 
-	///TODO: Add code here to 
-	// 1- Call function GetCellClicked :: done
-	// 2- Print on the status bar the vCell and hCell of the clicked cell :: done
-	// 3- Repeat Step 1 and 2 five  :: done
+	/////TODO: Add code here to 
+	//// 1- Call function GetCellClicked :: done
+	//// 2- Print on the status bar the vCell and hCell of the clicked cell :: done
+	//// 3- Repeat Step 1 and 2 five  :: done
 
 	
 	for (int i = 0; i < 6; i++)
@@ -478,12 +478,12 @@ int main()
 	pOut->PrintMessage("4.4- (AddCellNum) Test, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 
-	/// TODO:
-	// 1- Read from user two integers representing cellNum and addedNum:::done
-	// 2- Creates a CellPosition object of cellNum:::done
-	// 3- Use the function AddCellNum() to add the addedNum to the cellNum:::done
-	// 4- Print the vCell and hCell of the new Cell Position on the status bar:::done
-	// 5- Repeat the above steps Four TIMES with each time a different direction:::done
+	///// TODO:
+	//// 1- Read from user two integers representing cellNum and addedNum:::done
+	//// 2- Creates a CellPosition object of cellNum:::done
+	//// 3- Use the function AddCellNum() to add the addedNum to the cellNum:::done
+	//// 4- Print the vCell and hCell of the new Cell Position on the status bar:::done
+	//// 5- Repeat the above steps Four TIMES with each time a different direction:::done
 	pOut->PrintMessage("Enter the cellNum: ");
 	int cellnum = pIn->GetInteger(pOut);
 	pOut->PrintMessage("Enter the addedNum: ");
