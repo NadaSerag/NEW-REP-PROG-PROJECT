@@ -370,7 +370,7 @@ int main()
 	pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
 	pIn->GetPointClicked(x, y);
-	pOut->PrintMessage("You Entered " + pIn->GetSrting(pOut) );
+	pOut->PrintMessage("You Entered: " + pIn->GetSrting(pOut) );
 	pIn->GetPointClicked(x, y);
 
 	pOut->PrintMessage("FINISHED - (GetString) Test, Click to continue");
