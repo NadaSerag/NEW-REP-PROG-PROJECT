@@ -345,15 +345,15 @@ int main()
 	//// 2- Print on the status bar the vCell and hCell of the clicked cell :: done
 	//// 3- Repeat Step 1 and 2 five  :: done
 
-	
-	for (int i = 0; i < 6; i++)
-	{
-		pIn->GetCellClicked();
-		pOut->PrintMessage("(GetCellClicked) Test, VCell = " + to_string((pIn->GetCellClicked()).VCell()) + ", HCell = " + to_string((pIn->GetCellClicked()).HCell()));
-	}
+	//
+	//for (int i = 0; i < 6; i++)
+	//{
+	//	pIn->GetCellClicked();
+	//	pOut->PrintMessage("(GetCellClicked) Test, VCell = " + to_string((pIn->GetCellClicked()).VCell()) + ", HCell = " + to_string((pIn->GetCellClicked()).HCell()));
+	//}
 
-	pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");
-	pIn->GetPointClicked(x,y);	//Wait for any click
+	//pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");
+	//pIn->GetPointClicked(x,y);	//Wait for any click
 
 
 	/// 3.3- Reading a String ///
@@ -367,10 +367,9 @@ int main()
 	// 2- After reading the string clear the status bar :: done
 	// 3- print on the status bar "You Entered" then print the string :: done
 	// NOTE: GetString() is already implemented. It is just required from you to call it
-	pIn->GetSrting(pOut);
+	string n = pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
-	pIn->GetPointClicked(x, y);
-	pOut->PrintMessage("You Entered " + pIn->GetSrting(pOut) );
+	pOut->PrintMessage("You Entered " + n);
 	pIn->GetPointClicked(x, y);
 
 	pOut->PrintMessage("FINISHED - (GetString) Test, Click to continue");
