@@ -100,10 +100,10 @@ int CellPosition::GetCellNumFromPosition(const CellPosition& cellPosition)
 		index_v = cellPosition.VCell();
 		index_h = cellPosition.HCell();
 		cellNUM = 11 * (4 - index_v) + (1 + index_h);
-		return cellNUM
+		return cellNUM;
 	}
-
-	;
+	return -1;
+	
 }
 
 CellPosition CellPosition::GetCellPositionFromNum(int cellNum)
