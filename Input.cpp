@@ -163,7 +163,7 @@ CellPosition Input::GetCellClicked() const
 
 	CellPosition cellPos;
 
-	if ( UI.InterfaceMode == MODE_PLAY )	
+	if ( UI.InterfaceMode == MODE_DESIGN)	
 	{
 		if ( y >= UI.ToolBarHeight && y <= (UI.height - UI.StatusBarHeight))
 		{

@@ -110,7 +110,7 @@ int main()
 
 	pOut->PrintMessage("1.1.4- Finished Testing the Command bar in the Game mode, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-
+	pOut->CreateDesignModeToolBar();
 
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 2:	DONEE
@@ -654,7 +654,6 @@ int main()
 			case NEW_GAME:
 
 				pOut->PrintMessage("Action: NEW_GAME , Click anywhere");
-				pOut->ClearCommandsBar();
 				break;
 				///TODO:  ADD Cases similarly for ALL the remaining actions of PLAY Mode :: done
 
