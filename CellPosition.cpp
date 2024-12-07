@@ -102,7 +102,7 @@ int CellPosition::GetCellNumFromPosition(const CellPosition& cellPosition)
 		cellNUM = 11 * (4 - index_v) + (1 + index_h);
 		return cellNUM;
 	}
-	return -1;
+	return-1;
 	
 }
 
