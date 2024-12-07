@@ -29,7 +29,7 @@ int main()
 	// TEST 1:	
 	//			- Create The FULL Tool bar of Design Mode, the grid area, the status bar
 	//				and an empty command bar
-	//			- This has already been done through the constrcutor of class Output
+	//			- This has already been done through the constructor of class Output
 	///////////////////////////////////////////////////////////////////////////////////
 
 	pOut->PrintMessage("TEST1: Drawing Tool bar, Grid, Status bar and Empty Command bar, Click anywhere to continue");
@@ -468,7 +468,7 @@ int main()
 		 h = cellin.HCell();
 		 v = cellin.VCell();
 		
-		pOut->PrintMessage("V cell= " + to_string(v) + " Hcell= " + to_string(h));
+		pOut->PrintMessage("VCell= " + to_string(v) + " HCell= " + to_string(h));
 		pIn->GetPointClicked(x, y);
 	}
 	
@@ -490,20 +490,20 @@ int main()
 	int addednum = pIn->GetInteger(pOut);
 	CellPosition cellposofup(cellnum);
 	cellposofup.AddCellNum(addednum, UP);
-	pOut->PrintMessage("New Vcell= " + to_string(cellposofup.VCell()) + " New Hcell= " + to_string(cellposofup.HCell()));
+	pOut->PrintMessage("New VCell= " + to_string(cellposofup.VCell()) + " New HCell= " + to_string(cellposofup.HCell()));
 	pIn->GetPointClicked(x, y);
 	CellPosition cellposofdown(cellnum);
 	cellposofdown.AddCellNum(addednum, DOWN);
-	pOut->PrintMessage("New Vcell= " + to_string(cellposofdown.VCell()) + " New Hcell= " + to_string(cellposofdown.HCell()));
+	pOut->PrintMessage("New VCell= " + to_string(cellposofdown.VCell()) + " New HCell= " + to_string(cellposofdown.HCell()));
 	pIn->GetPointClicked(x, y);
 	CellPosition cellposofr(cellnum);
 	cellposofr.AddCellNum(addednum, RIGHT);
-	pOut->PrintMessage("New Vcell= " + to_string(cellposofr.VCell()) + " New Hcell= " + to_string(cellposofr.HCell()));
+	pOut->PrintMessage("New VCell= " + to_string(cellposofr.VCell()) + " New HCell= " + to_string(cellposofr.HCell()));
 	pIn->GetPointClicked(x, y);
 
 	CellPosition cellposofl(cellnum);
 	cellposofl.AddCellNum(addednum, LEFT);
-	pOut->PrintMessage("New Vcell= " + to_string(cellposofl.VCell()) + " New Hcell= " + to_string(cellposofl.HCell()));
+	pOut->PrintMessage("New VCell= " + to_string(cellposofl.VCell()) + " New HCell= " + to_string(cellposofl.HCell()));
 	pIn->GetPointClicked(x, y);
 
 	pOut->PrintMessage("FINISHED - (AddCellNum) Test, Click to continue");
