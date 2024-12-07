@@ -468,7 +468,7 @@ int main()
 		 h = cellin.HCell();
 		 v = cellin.VCell();
 		
-		pOut->PrintMessage("V cell= " + to_string(v) + " Hcell= " + to_string(h));
+		pOut->PrintMessage("VCell= " + to_string(v) + " HCell= " + to_string(h));
 		pIn->GetPointClicked(x, y);
 	}
 	
