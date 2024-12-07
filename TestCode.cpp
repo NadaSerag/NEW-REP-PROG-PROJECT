@@ -340,20 +340,20 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
 
-	/////TODO: Add code here to 
-	//// 1- Call function GetCellClicked :: done
-	//// 2- Print on the status bar the vCell and hCell of the clicked cell :: done
-	//// 3- Repeat Step 1 and 2 five  :: done
+	///TODO: Add code here to 
+	// 1- Call function GetCellClicked :: done
+	// 2- Print on the status bar the vCell and hCell of the clicked cell :: done
+	// 3- Repeat Step 1 and 2 five  :: done
 
-	//
-	//for (int i = 0; i < 6; i++)
-	//{
-	//	pIn->GetCellClicked();
-	//	pOut->PrintMessage("(GetCellClicked) Test, VCell = " + to_string((pIn->GetCellClicked()).VCell()) + ", HCell = " + to_string((pIn->GetCellClicked()).HCell()));
-	//}
+	
+	for (int i = 0; i < 6; i++)
+	{
+		pIn->GetCellClicked();
+		pOut->PrintMessage("(GetCellClicked) Test, VCell = " + to_string((pIn->GetCellClicked()).VCell()) + ", HCell = " + to_string((pIn->GetCellClicked()).HCell()));
+	}
 
-	//pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");
-	//pIn->GetPointClicked(x,y);	//Wait for any click
+	pOut->PrintMessage("FINISHED - (GetCellClicked) Test, Click to continue");
+	pIn->GetPointClicked(x,y);	//Wait for any click
 
 
 	/// 3.3- Reading a String ///
