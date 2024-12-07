@@ -587,7 +587,7 @@ void Output::DrawBelt(const CellPosition& fromCellPos, const CellPosition& toCel
 		// Get the start X and Y coordinates of the upper left corner of the fromCell and toCell
 		if (fromCellPos.VCell() == toCellPos.VCell())
 		{
-			int beltFromCellX = fromCellStartX + (UI.CellWidth / 2) + UI.BeltXOffset;
+			int beltFromCellX = fromCellStartX + (UI.CellWidth /2) + UI.BeltXOffset;
 			int beltToCellX = toCellStartX + UI.BeltXOffset;
 			int beltFromCellY = fromCellStartY + UI.BeltYOffset;
 			int beltToCellY = toCellStartY + UI.BeltYOffset;
