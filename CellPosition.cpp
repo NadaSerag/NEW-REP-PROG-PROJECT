@@ -89,19 +89,21 @@ int CellPosition::GetCellNumFromPosition(const CellPosition& cellPosition)
 	// Note:
 	// this is a static function (do NOT need a calling object so CANNOT use the data members of the calling object, vCell&hCell)
 	// just define an integer that represents cell number and calculate it using the passed cellPosition then return it
-	int cellNUM = 0;
-	int index_h = 0;
-	int index_v = 0;
+	
 
 	///TODO: Implement this function as described in the .h file 
 	if (cellPosition.IsValidCell())
 	{
+		int cellNUM = 0;
+		int index_h = 0;
+		int index_v = 0;
 		index_v = cellPosition.VCell();
 		index_h = cellPosition.HCell();
+		cellNUM = 11 * (4 - index_v) + (1 + index_h);
+		return cellNUM
 	}
 
-	cellNUM = 11 * (4 - index_v) + (1 + index_h);
-	return cellNUM;
+	;
 }
 
 CellPosition CellPosition::GetCellPositionFromNum(int cellNum)
