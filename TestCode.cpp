@@ -369,7 +369,7 @@ int main()
 	// NOTE: GetString() is already implemented. It is just required from you to call it
 	string n = pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
-	pOut->PrintMessage("You Entered " + n);
+	pOut->PrintMessage("You Entered: " + n);
 	pIn->GetPointClicked(x, y);
 
 	pOut->PrintMessage("FINISHED - (GetString) Test, Click to continue");
